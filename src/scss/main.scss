@@ -1,0 +1,118 @@
+@import "./variables";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Poppins:700&display=swap");
+
+/* ----------------------------------------
+    General Styles
+---------------------------------------- */
+html {
+  font-size: 24px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  font-family: $opensans;
+  text-decoration: none;
+}
+p {
+  font-family: $opensans;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  min-height: $padding-large;
+  padding: 0 $padding-medium;
+  border: solid white 1px;
+  white-space: nowrap;
+}
+.square {
+  max-width: $padding-large;
+}
+.arrow {
+  display: inline-block;
+  padding: 0.3em;
+  transform: translate(-7.5px, -3px) rotate(45deg);
+  border: solid white;
+  border-width: 0 1px 1px 0;
+}
+
+/* ----------------------------------------
+    Header Styles
+---------------------------------------- */
+header {
+  @include container($gradient-dark);
+  @include textbox();
+  color: white;
+
+  article {
+    width: 50%;
+    margin-top: auto;
+  }
+  h1 {
+    @include heading($poppins);
+    @include gradientText($gradient-primary);
+
+    font-size: $size-title;
+    line-height: 1em;
+    user-select: none;
+  }
+  nav {
+    a {
+      text-transform: uppercase;
+    }
+    .slash::after {
+      content: "//";
+      padding: 0 $padding-small;
+    }
+  }
+
+  .top-border {
+    & > * {
+      @include border(top, 100%, $padding-large);
+    }
+  }
+  .bottom-border {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    & > * {
+      @include border(bottom, 100%, 100%);
+    }
+  }
+}
+
+/* ----------------------------------------
+    Main Styles
+---------------------------------------- */
+section {
+  @include container($gradient-smoke);
+
+  h1 {
+    @include heading($opensans);
+  }
+}
+
+/* ----------------------------------------
+    Footer Styles
+---------------------------------------- */
+footer {
+  @include container($gradient-dark);
+
+  h1 {
+    @include heading($poppins);
+  }
+}

@@ -1,0 +1,91 @@
+/* ----------------------------------------
+    Variables
+---------------------------------------- */
+/* Colours */
+$primary: #e84545;
+$primary-tint: #903749;
+$primary-dark: #53354a;
+$secondary: #2b2e4a;
+
+$gradient-primary: linear-gradient(180deg, $primary, $primary-tint);
+$gradient-dark: linear-gradient(135deg, $primary-dark, $secondary);
+$gradient-smoke: linear-gradient(135deg, #ffffff, #f5f5f5);
+
+/* Typography */
+$poppins: "Poppins", sans-serif;
+$opensans: "Open Sans Condensed", sans-serif;
+$size-title: 8rem;
+
+/* Sizing */
+$padding-large: 3rem;
+$padding-medium: 1.5rem;
+$padding-small: 0.5rem;
+
+/* ----------------------------------------
+    Mixins
+---------------------------------------- */
+@mixin container($bg-color) {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  padding: $padding-large;
+  background: $bg-color;
+
+  .top-border,
+  .bottom-border {
+    height: $padding-large;
+    border-left: solid white 1px;
+    border-right: solid white 1px;
+  }
+}
+
+@mixin border($top-or-bottom, $left, $right) {
+  @if ($top-or-bottom == "bottom") {
+    transform: translate(0, 1.5em);
+  } @else {
+    transform: translate(0, -0.65em);
+  }
+
+  display: flex;
+  align-items: center;
+  user-select: none;
+
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    border-top: solid white 1px;
+  }
+  &::before {
+    width: $left;
+    margin-right: $padding-small;
+  }
+  &::after {
+    width: $right;
+    margin-left: $padding-small;
+  }
+}
+
+@mixin heading($font) {
+  font-family: $font;
+  text-transform: uppercase;
+}
+
+@mixin textbox() {
+  .bar {
+    display: inline-block;
+    width: 15em;
+    margin: 0.5em 1.5em 0 0;
+    border-top: solid 5px $primary;
+  }
+  .content {
+    display: flex;
+  }
+}
+
+@mixin gradientText($gradient-color) {
+  background: $gradient-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
