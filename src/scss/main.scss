@@ -6,6 +6,7 @@
 ---------------------------------------- */
 html {
   font-size: 24px;
+  overflow-x: hidden;
 }
 * {
   box-sizing: border-box;
@@ -29,32 +30,44 @@ a:active {
 p {
   font-family: $opensans;
 }
+p + p {
+  padding-top: 1em;
+}
 
 .box {
   display: flex;
   align-items: center;
   min-height: $padding-large;
-  padding: 0 $padding-medium;
-  border: solid white 1px;
+  padding: 0 $padding-large;
+  border: solid 1px;
+  border-color: inherit;
   white-space: nowrap;
 }
 .square {
   max-width: $padding-large;
+  padding: 0 $padding-medium;
 }
 .arrow {
   display: inline-block;
   padding: 0.3em;
-  transform: translate(-7.5px, -3px) rotate(45deg);
-  border: solid white;
+
+  border: solid 1px;
+  border-color: inherit;
   border-width: 0 1px 1px 0;
+}
+.down.arrow {
+  transform: translate(-7.5px, -3px) rotate(45deg);
+}
+.up.arrow {
+  transform: translate(-7.5px, 3px) rotate(225deg);
 }
 
 /* ----------------------------------------
-    Header Styles
+    Home Styles
 ---------------------------------------- */
-header {
-  @include container($gradient-dark);
-  @include textbox();
+#home {
+  @include container($gradient-dark, white);
+  @include textbox($primary);
   color: white;
 
   article {
@@ -70,49 +83,235 @@ header {
     user-select: none;
   }
   nav {
+    span + span::before {
+      content: "//";
+      padding: 0 1em;
+    }
     a {
       text-transform: uppercase;
     }
-    .slash::after {
-      content: "//";
-      padding: 0 $padding-small;
-    }
   }
-
-  .top-border {
+  header {
     & > * {
-      @include border(top, 100%, $padding-large);
+      @include border(top, 100%, $padding-large, white);
     }
   }
-  .bottom-border {
+  footer {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
 
     & > * {
-      @include border(bottom, 100%, 100%);
+      @include border(bottom, 100%, 100%, white);
     }
   }
 }
 
 /* ----------------------------------------
-    Main Styles
+    Portfolio Styles
 ---------------------------------------- */
-section {
-  @include container($gradient-smoke);
+#dashpoint,
+#design {
+  @include container($gradient-smoke, lightgray);
+  position: relative;
+  font-family: $opensans;
 
+  article {
+    display: flex;
+    justify-content: space-between;
+
+    width: 110%;
+    margin-top: $padding-large;
+    margin-bottom: auto;
+
+    p {
+      color: black; // ### Change this to palette dark later ###
+    }
+    & > div:first-child {
+      min-width: 45%;
+    }
+    & > div:first-child + div {
+      align-self: center;
+      padding-left: $padding-large;
+    }
+  }
   h1 {
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  h2 {
+    padding-bottom: $padding-medium;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    user-select: none;
+  }
+  h3 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  aside {
+    display: flex;
+    padding-top: $padding-large;
+
+    & > * {
+      flex: 1 1 0;
+      padding-right: $padding-medium;
+      word-spacing: 0.2em;
+
+      span {
+        word-spacing: normal;
+      }
+    }
+  }
+  header {
+    & > * {
+      @include border(top, $padding-large, 100%, lightgray);
+    }
+  }
+  footer {
     @include heading($opensans);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    & > * {
+      @include border(bottom, 100%, 100%, lightgray);
+
+      & > span {
+        width: 10%;
+        margin: 0 $padding-medium;
+        border-top: solid 1px;
+        border-color: lightgrey;
+      }
+    }
+  }
+
+  .back-to-top {
+    @include backToTop();
+
+    background: linear-gradient(135deg, #f8f8f8, #f7f7f7);
+  }
+}
+
+#dashpoint {
+  @include textbox($dash-primary);
+  color: $dash-primary;
+
+  img {
+    width: 100%;
+  }
+}
+#design {
+  @include textbox($design-primary);
+  color: $design-primary;
+
+  img {
+    width: 80%;
+    margin-left: $padding-large;
   }
 }
 
 /* ----------------------------------------
-    Footer Styles
+    Contact Styles
 ---------------------------------------- */
-footer {
-  @include container($gradient-dark);
+#contact {
+  @include container($gradient-dark, white);
+  @include textbox(white);
+  position: relative;
+  font-family: $opensans;
+  color: white;
 
+  article {
+    width: 100%;
+    margin-top: $padding-medium;
+    margin-bottom: auto;
+
+    img {
+      padding: $padding-medium $padding-small;
+    }
+    form {
+      margin-left: auto;
+
+      & > * {
+        margin-bottom: $padding-small;
+        padding-bottom: 0.2em;
+        background: none;
+        outline: none;
+        font-family: $opensans;
+        font-size: 1rem;
+      }
+      input,
+      textarea {
+        display: block;
+        width: calc(50vw - 2 * #{$padding-large} - #{$padding-medium});
+        color: white;
+        border: none;
+        border-bottom: solid white 1px;
+
+        &:focus {
+          color: inherit;
+
+          &::placeholder {
+            filter: opacity(0%);
+          }
+        }
+        &::placeholder {
+          color: inherit;
+          filter: opacity(50%);
+        }
+      }
+      textarea {
+        margin-right: $padding-medium;
+        resize: none;
+      }
+      button {
+        margin-top: $padding-medium;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+  }
   h1 {
-    @include heading($poppins);
+    font-family: $opensans;
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  h2 {
+    padding-bottom: $padding-medium;
+    font-family: $poppins;
+    font-size: 5em;
+    line-height: 1em;
+    text-transform: uppercase;
+    user-select: none;
+  }
+  header {
+    & > * {
+      @include border(top, $padding-large, 100%, lightgray);
+    }
+  }
+  footer {
+    @include heading($opensans);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    & > * {
+      @include border(text, 100%, 100%, lightgray);
+      white-space: nowrap;
+      word-spacing: 0.2em;
+
+      span {
+        word-spacing: normal;
+      }
+    }
+  }
+
+  .back-to-top {
+    @include backToTop();
+
+    // background: linear-gradient(135deg, #f8f8f8, #f7f7f7);
   }
 }

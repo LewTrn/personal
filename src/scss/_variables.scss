@@ -7,9 +7,12 @@ $primary-tint: #903749;
 $primary-dark: #53354a;
 $secondary: #2b2e4a;
 
+$dash-primary: #00adb5;
+$design-primary: #123456;
+
 $gradient-primary: linear-gradient(180deg, $primary, $primary-tint);
 $gradient-dark: linear-gradient(135deg, $primary-dark, $secondary);
-$gradient-smoke: linear-gradient(135deg, #ffffff, #f5f5f5);
+$gradient-smoke: linear-gradient(135deg, white, whitesmoke);
 
 /* Typography */
 $poppins: "Poppins", sans-serif;
@@ -24,7 +27,7 @@ $padding-small: 0.5rem;
 /* ----------------------------------------
     Mixins
 ---------------------------------------- */
-@mixin container($bg-color) {
+@mixin container($bg-color, $border-color) {
   display: flex;
   flex-direction: column;
 
@@ -35,16 +38,18 @@ $padding-small: 0.5rem;
   .top-border,
   .bottom-border {
     height: $padding-large;
-    border-left: solid white 1px;
-    border-right: solid white 1px;
+    border-left: solid $border-color 1px;
+    border-right: solid $border-color 1px;
   }
 }
 
-@mixin border($top-or-bottom, $left, $right) {
+@mixin border($top-or-bottom, $left, $right, $border-color) {
   @if ($top-or-bottom == "bottom") {
     transform: translate(0, 1.5em);
-  } @else {
+  } @else if ($top-or-bottom == "top") {
     transform: translate(0, -0.65em);
+  } @else {
+    transform: translate(0, 0.65em);
   }
 
   display: flex;
@@ -55,15 +60,15 @@ $padding-small: 0.5rem;
   &::after {
     content: "";
     display: inline-block;
-    border-top: solid white 1px;
+    border-top: solid $border-color 1px;
   }
   &::before {
     width: $left;
-    margin-right: $padding-small;
+    margin-right: $padding-medium;
   }
   &::after {
     width: $right;
-    margin-left: $padding-small;
+    margin-left: $padding-medium;
   }
 }
 
@@ -72,16 +77,22 @@ $padding-small: 0.5rem;
   text-transform: uppercase;
 }
 
-@mixin textbox() {
+@mixin textbox($bar-color) {
   .bar {
     display: inline-block;
-    width: 15em;
+    min-width: 5em;
     margin: 0.5em 1.5em 0 0;
-    border-top: solid 5px $primary;
+    border-top: solid 5px $bar-color;
   }
   .content {
     display: flex;
   }
+}
+
+@mixin backToTop() {
+  position: absolute;
+  top: calc(#{$padding-large} / 2);
+  right: calc(#{$padding-large} / 2);
 }
 
 @mixin gradientText($gradient-color) {
