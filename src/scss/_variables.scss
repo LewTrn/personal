@@ -17,12 +17,11 @@ $gradient-smoke: linear-gradient(135deg, white, whitesmoke);
 /* Typography */
 $poppins: "Poppins", sans-serif;
 $opensans: "Open Sans Condensed", sans-serif;
-$size-title: 8rem;
 
 /* Sizing */
-$padding-large: 3rem;
-$padding-medium: 1.5rem;
-$padding-small: 0.5rem;
+$padding-large: 4rem;
+$padding-medium: 2rem;
+$padding-small: 1rem;
 
 /* ----------------------------------------
     Mixins
@@ -45,9 +44,9 @@ $padding-small: 0.5rem;
 
 @mixin border($top-or-bottom, $left, $right, $border-color) {
   @if ($top-or-bottom == "bottom") {
-    transform: translate(0, 1.5em);
+    transform: translate(0, 1.95em);
   } @else if ($top-or-bottom == "top") {
-    transform: translate(0, -0.65em);
+    transform: translate(0, -0.7em);
   } @else {
     transform: translate(0, 0.65em);
   }

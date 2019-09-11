@@ -5,8 +5,9 @@
     General Styles
 ---------------------------------------- */
 html {
-  font-size: 24px;
+  font-size: 20px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 * {
   box-sizing: border-box;
@@ -51,9 +52,9 @@ p + p {
   display: inline-block;
   padding: 0.3em;
 
-  border: solid 1px;
+  border: solid;
   border-color: inherit;
-  border-width: 0 1px 1px 0;
+  border-width: 0 1.5px 1.5px 0;
 }
 .down.arrow {
   transform: translate(-7.5px, -3px) rotate(45deg);
@@ -71,18 +72,30 @@ p + p {
   color: white;
 
   article {
-    width: 50%;
+    width: 45%;
     margin-top: auto;
+
+    p {
+      filter: opacity(60%);
+    }
   }
   h1 {
     @include heading($poppins);
     @include gradientText($gradient-primary);
 
-    font-size: $size-title;
+    font-size: 8em;
     line-height: 1em;
     user-select: none;
   }
+  h3 {
+    font-family: $opensans;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
   nav {
+    font-size: 1.3em;
+
     span + span::before {
       content: "//";
       padding: 0 1em;
@@ -121,34 +134,36 @@ p + p {
     justify-content: space-between;
 
     width: 110%;
-    margin-top: $padding-large;
+    margin-top: $padding-medium;
     margin-bottom: auto;
 
     p {
       color: black; // ### Change this to palette dark later ###
     }
     & > div:first-child {
-      min-width: 45%;
+      width: 100%;
     }
     & > div:first-child + div {
       align-self: center;
-      padding-left: $padding-large;
+      padding-left: $padding-medium;
     }
   }
-  h1 {
-    font-size: 1em;
+  h1,
+  h3,
+  h4 {
     font-weight: normal;
+  }
+  h1 {
+    font-size: 1.3em;
     text-transform: uppercase;
   }
   h2 {
-    padding-bottom: $padding-medium;
     font-size: 2.5em;
     text-transform: uppercase;
     user-select: none;
   }
   h3 {
-    font-size: inherit;
-    font-weight: inherit;
+    padding-bottom: $padding-medium;
   }
   aside {
     display: flex;
@@ -275,7 +290,7 @@ p + p {
   }
   h1 {
     font-family: $opensans;
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: normal;
     text-transform: uppercase;
   }
@@ -297,6 +312,7 @@ p + p {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+    font-size: 1.3em;
 
     & > * {
       @include border(text, 100%, 100%, lightgray);
