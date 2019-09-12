@@ -1,5 +1,6 @@
 @import "./variables";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Poppins:700&display=swap");
+@import "./animations";
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,700|Poppins:700&display=swap");
 
 /* ----------------------------------------
     General Styles
@@ -24,17 +25,33 @@ a:link,
 a:visited,
 a:hover,
 a:active {
+  @include heading($opensans);
   color: inherit;
-  font-family: $opensans;
   text-decoration: none;
+
+  &.default {
+    text-decoration: underline;
+    text-transform: lowercase;
+  }
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
   font-family: $opensans;
+  font-weight: normal;
+  text-align: justify;
 }
 p + p {
   padding-top: 1em;
 }
 
+/* ----------------------------------------
+    Component Styles
+---------------------------------------- */
 .box {
   display: flex;
   align-items: center;
@@ -51,15 +68,14 @@ p + p {
 .arrow {
   display: inline-block;
   padding: 0.3em;
-
   border: solid;
   border-color: inherit;
   border-width: 0 1.5px 1.5px 0;
 }
-.down.arrow {
+.arrow.down {
   transform: translate(-7.5px, -3px) rotate(45deg);
 }
-.up.arrow {
+.arrow.up {
   transform: translate(-7.5px, 3px) rotate(225deg);
 }
 
@@ -67,46 +83,43 @@ p + p {
     Home Styles
 ---------------------------------------- */
 #home {
-  @include container($gradient-dark, white);
-  @include textbox($primary);
-  color: white;
+  @include container($gradient-dark, #fff);
+  @include textbox($primary-tint);
+  color: #fff;
 
   article {
-    width: 45%;
+    width: 45.6%;
     margin-top: auto;
 
     p {
       filter: opacity(60%);
+      padding-top: $padding-small;
     }
   }
   h1 {
     @include heading($poppins);
     @include gradientText($gradient-primary);
 
-    font-size: 8em;
-    line-height: 1em;
+    font-size: 9rem;
+    line-height: 0.9em;
     user-select: none;
   }
-  h3 {
-    font-family: $opensans;
+  h2 {
+    margin-top: -0.25em;
     font-weight: normal;
-    font-size: 1.5em;
-    line-height: 1.5em;
+    font-size: 1.5rem;
   }
   nav {
-    font-size: 1.3em;
+    font-size: $nav-size;
 
     span + span::before {
       content: "//";
-      padding: 0 1em;
-    }
-    a {
-      text-transform: uppercase;
+      padding: 0 $padding-small;
     }
   }
   header {
     & > * {
-      @include border(top, 100%, $padding-large, white);
+      @include border($translate-top, 100%, $padding-large, #fff);
     }
   }
   footer {
@@ -115,7 +128,7 @@ p + p {
     flex-direction: column;
 
     & > * {
-      @include border(bottom, 100%, 100%, white);
+      @include border($translate-mouse, 100%, 100%, #fff);
     }
   }
 }
@@ -125,9 +138,8 @@ p + p {
 ---------------------------------------- */
 #dashpoint,
 #design {
-  @include container($gradient-smoke, lightgray);
+  @include container($gradient-light, lightgray);
   position: relative;
-  font-family: $opensans;
 
   article {
     display: flex;
@@ -138,7 +150,7 @@ p + p {
     margin-bottom: auto;
 
     p {
-      color: black; // ### Change this to palette dark later ###
+      color: $secondary-dark; // ### Change this to palette dark later ###
     }
     & > div:first-child {
       width: 100%;
@@ -148,22 +160,15 @@ p + p {
       padding-left: $padding-medium;
     }
   }
-  h1,
-  h3,
-  h4 {
-    font-weight: normal;
-  }
   h1 {
-    font-size: 1.3em;
+    font-size: $nav-size;
     text-transform: uppercase;
   }
   h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
+    font-weight: bold;
     text-transform: uppercase;
     user-select: none;
-  }
-  h3 {
-    padding-bottom: $padding-medium;
   }
   aside {
     display: flex;
@@ -181,17 +186,16 @@ p + p {
   }
   header {
     & > * {
-      @include border(top, $padding-large, 100%, lightgray);
+      @include border($translate-top, $padding-large, 100%, lightgray);
     }
   }
   footer {
-    @include heading($opensans);
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
 
     & > * {
-      @include border(bottom, 100%, 100%, lightgray);
+      @include border($translate-box, 100%, 100%, lightgray);
 
       & > span {
         width: 10%;
@@ -204,7 +208,6 @@ p + p {
 
   .back-to-top {
     @include backToTop();
-
     background: linear-gradient(135deg, #f8f8f8, #f7f7f7);
   }
 }
@@ -214,7 +217,18 @@ p + p {
   color: $dash-primary;
 
   img {
-    width: 100%;
+    width: 90%;
+    margin-left: $padding-medium;
+  }
+
+  .wipe {
+    &::before {
+      background: $dash-primary;
+    }
+    &:hover {
+      color: #fff;
+      border: solid 1px $dash-primary;
+    }
   }
 }
 #design {
@@ -222,8 +236,18 @@ p + p {
   color: $design-primary;
 
   img {
-    width: 80%;
+    width: 75%;
     margin-left: $padding-large;
+  }
+
+  .wipe {
+    &::before {
+      background: $design-primary;
+    }
+    &:hover {
+      color: #fff;
+      border: solid 1px $design-primary;
+    }
   }
 }
 
@@ -231,28 +255,32 @@ p + p {
     Contact Styles
 ---------------------------------------- */
 #contact {
-  @include container($gradient-dark, white);
-  @include textbox(white);
+  @include container($gradient-dark, #fff);
+  @include textbox(#fff);
   position: relative;
-  font-family: $opensans;
-  color: white;
+  color: #fff;
 
   article {
     width: 100%;
     margin-top: $padding-medium;
     margin-bottom: auto;
 
-    img {
-      padding: $padding-medium $padding-small;
+    a {
+      margin-right: $padding-small;
+
+      img {
+        margin-top: $padding-small;
+      }
     }
     form {
       margin-left: auto;
+      transform: translate(0, 0); // Enables wipe animation
 
       & > * {
         margin-bottom: $padding-small;
         padding-bottom: 0.2em;
-        background: none;
-        outline: none;
+        background: transparent;
+        outline: transparent;
         font-family: $opensans;
         font-size: 1rem;
       }
@@ -260,9 +288,9 @@ p + p {
       textarea {
         display: block;
         width: calc(50vw - 2 * #{$padding-large} - #{$padding-medium});
-        color: white;
+        color: #fff;
         border: none;
-        border-bottom: solid white 1px;
+        border-bottom: solid #fff 1px;
 
         &:focus {
           color: inherit;
@@ -282,29 +310,26 @@ p + p {
       }
       button {
         margin-top: $padding-medium;
-        color: white;
+        color: inherit;
         text-transform: uppercase;
         cursor: pointer;
       }
     }
   }
   h1 {
-    font-family: $opensans;
-    font-size: 1.3em;
-    font-weight: normal;
+    font-size: $nav-size;
     text-transform: uppercase;
   }
   h2 {
-    padding-bottom: $padding-medium;
-    font-family: $poppins;
-    font-size: 5em;
+    @include heading($poppins);
+    @include gradientText($gradient-light);
+    font-size: 5rem;
     line-height: 1em;
-    text-transform: uppercase;
     user-select: none;
   }
   header {
     & > * {
-      @include border(top, $padding-large, 100%, lightgray);
+      @include border($translate-top, $padding-large, 100%, lightgray);
     }
   }
   footer {
@@ -312,10 +337,10 @@ p + p {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    font-size: 1.3em;
+    font-size: $nav-size;
 
     & > * {
-      @include border(text, 100%, 100%, lightgray);
+      @include border($translate-bottom, 100%, 100%, lightgray);
       white-space: nowrap;
       word-spacing: 0.2em;
 
@@ -327,7 +352,18 @@ p + p {
 
   .back-to-top {
     @include backToTop();
-
-    // background: linear-gradient(135deg, #f8f8f8, #f7f7f7);
+    background: linear-gradient(135deg, #4a4d64, #484d60);
+  }
+  .wipe {
+    &::before {
+      background: #fff;
+    }
+    &:hover {
+      color: $secondary;
+      border: solid 1px #fff;
+    }
+    &:hover::before {
+      color: $secondary;
+    }
   }
 }

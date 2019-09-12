@@ -2,26 +2,33 @@
     Variables
 ---------------------------------------- */
 /* Colours */
-$primary: #e84545;
-$primary-tint: #903749;
-$primary-dark: #53354a;
-$secondary: #2b2e4a;
+$primary: #fafdcb;
+$primary-tint: #aee7e8;
+$primary-dark: #248ea9;
+$secondary: #6c7b95;
+$secondary-dark: #464159;
 
 $dash-primary: #00adb5;
-$design-primary: #123456;
+$design-primary: #2e557a;
 
-$gradient-primary: linear-gradient(180deg, $primary, $primary-tint);
-$gradient-dark: linear-gradient(135deg, $primary-dark, $secondary);
-$gradient-smoke: linear-gradient(135deg, white, whitesmoke);
+$gradient-primary: linear-gradient(135deg, $primary 10%, $primary-tint, $primary-dark);
+$gradient-light: linear-gradient(135deg, #fff, whitesmoke);
+$gradient-dark: linear-gradient(135deg, $secondary, $secondary-dark);
 
 /* Typography */
 $poppins: "Poppins", sans-serif;
-$opensans: "Open Sans Condensed", sans-serif;
+$opensans: "Barlow Semi Condensed", sans-serif;
+$nav-size: 1.2rem;
 
 /* Sizing */
-$padding-large: 4rem;
-$padding-medium: 2rem;
 $padding-small: 1rem;
+$padding-medium: 2rem;
+$padding-large: 4rem;
+
+$translate-top: -0.6em;
+$translate-bottom: 0.6em;
+$translate-box: 1.95em;
+$translate-mouse: 0em;
 
 /* ----------------------------------------
     Mixins
@@ -34,26 +41,19 @@ $padding-small: 1rem;
   padding: $padding-large;
   background: $bg-color;
 
-  .top-border,
-  .bottom-border {
+  header,
+  footer {
     height: $padding-large;
     border-left: solid $border-color 1px;
     border-right: solid $border-color 1px;
   }
 }
 
-@mixin border($top-or-bottom, $left, $right, $border-color) {
-  @if ($top-or-bottom == "bottom") {
-    transform: translate(0, 1.95em);
-  } @else if ($top-or-bottom == "top") {
-    transform: translate(0, -0.7em);
-  } @else {
-    transform: translate(0, 0.65em);
-  }
-
+@mixin border($translate-y, $left, $right, $border-color) {
   display: flex;
   align-items: center;
   user-select: none;
+  transform: translate(0, $translate-y);
 
   &::before,
   &::after {
@@ -85,17 +85,19 @@ $padding-small: 1rem;
   }
   .content {
     display: flex;
+    padding-top: $padding-medium;
   }
-}
-
-@mixin backToTop() {
-  position: absolute;
-  top: calc(#{$padding-large} / 2);
-  right: calc(#{$padding-large} / 2);
 }
 
 @mixin gradientText($gradient-color) {
   background: $gradient-color;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@mixin backToTop() {
+  position: absolute;
+  top: calc(#{$padding-large} / 2);
+  right: calc(#{$padding-large} / 2);
+  transform: translate(0, 0); // Enables wipe animation
 }
