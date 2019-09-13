@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lewis Tran | Front End Developer</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.26242483.ico">
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js" defer=""></script>
@@ -59,7 +60,7 @@
         </header>
 
         <div class="back-to-top">
-          <a class="box square wipe" href="#Home"><span class="arrow up"></span></a>
+          <a class="box square wipe" href="#Home" aria-label="Back to top"><span class="arrow up"></span></a>
         </div>
 
         <article>
@@ -93,7 +94,7 @@
             </div>
           </div>
           <div>
-            <img src="/dashpoint@2x.444ced7e.png" alt="Dashpoint mockup">
+            <img src="/dashpoint@2x.444ced7e.png" srcset="/dashpoint.95977714.png 1200w,/dashpoint@2x.444ced7e.png 2400w" alt="Dashpoint mockup">
           </div>
         </article>
 
@@ -113,7 +114,7 @@
         </header>
 
         <div class="back-to-top">
-          <a class="box square wipe" href="#Home"><span class="arrow up"></span></a>
+          <a class="box square wipe" href="#Home" aria-label="Back to top"><span class="arrow up"></span></a>
         </div>
 
         <article>
@@ -149,7 +150,7 @@
             </div>
           </div>
           <div>
-            <img src="/design@2x.22f1a8c1.png" alt="Design Learning Objects mockup">
+            <img src="/design@2x.22f1a8c1.png" srcset="/design.7583e9c8.png 1200w,/design@2x.22f1a8c1.png 2400w" alt="Design Learning Objects mockup">
           </div>
         </article>
 
@@ -169,7 +170,7 @@
         </header>
 
         <div class="back-to-top">
-          <a class="box square wipe" href="#Home"><span class="arrow up"></span></a>
+          <a class="box square wipe" href="#Home" aria-label="Back to top"><span class="arrow up"></span></a>
         </div>
 
         <article>
@@ -186,10 +187,11 @@
               <a class="underline" href="https://www.linkedin.com/in/lewis-tran/" target="_blank" rel="noreferrer"><img src="/linkedin.b71b7340.svg" alt="LinkedIn"></a>
               <a class="underline" href="https://github.com/LewTrn" target="_blank" rel="noreferrer"><img src="/github.1d8dc012.svg" alt="GitHub"></a>
             </div>
-            <form>
-              <input type="text" placeholder="Your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="this.setCustomValidity('Please enter a valid email address')" oninput="this.setCustomValidity('')" required="">
-              <textarea rows="5" placeholder="Your message" required=""></textarea>
+            <form name="contact" method="POST" data-netlify="true">
+              <input name="email" type="email" placeholder="Your email address" aria-label="Email address" required="">
+              <textarea name="message" rows="5" placeholder="Your message" aria-label="Message" required=""></textarea>
               <button class="box wipe" type="submit">Send message</button>
+              <div data-netlify-recaptcha="true"></div>
             </form>
           </div>
         </article>

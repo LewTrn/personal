@@ -155,7 +155,7 @@ p + p {
       color: $secondary-dark; // ### Change this to palette dark later ###
     }
     & > div:first-child {
-      width: 100%;
+      width: 75%;
     }
     & > div:first-child + div {
       align-self: center;
@@ -237,7 +237,7 @@ p + p {
   color: $design-primary;
 
   img {
-    width: 75%;
+    width: 80%;
     margin-left: $padding-large;
   }
 
@@ -310,10 +310,15 @@ p + p {
         resize: none;
       }
       button {
+        display: inline-block;
         margin-top: $padding-medium;
+        margin-right: $padding-medium;
         color: inherit;
         text-transform: uppercase;
         cursor: pointer;
+      }
+      div[data-netlify-recaptcha] {
+        display: inline-block;
       }
     }
   }

@@ -297,7 +297,7 @@ p + p {
       color: #464159; }
     #myDashpoint article > div:first-child,
     #myDesign article > div:first-child {
-      width: 100%; }
+      width: 75%; }
     #myDashpoint article > div:first-child + div,
     #myDesign article > div:first-child + div {
       align-self: center;
@@ -413,7 +413,7 @@ p + p {
     display: flex;
     padding-top: 2rem; }
   #myDesign img {
-    width: 75%;
+    width: 80%;
     margin-left: 4rem; }
   #myDesign .wipe::before {
     background: #2e557a; }
@@ -485,10 +485,14 @@ p + p {
         margin-right: 2rem;
         resize: none; }
       #myContact article form button {
+        display: inline-block;
         margin-top: 2rem;
+        margin-right: 2rem;
         color: inherit;
         text-transform: uppercase;
         cursor: pointer; }
+      #myContact article form div[data-netlify-recaptcha] {
+        display: inline-block; }
   #myContact h1 {
     font-size: 1.2rem;
     text-transform: uppercase; }
