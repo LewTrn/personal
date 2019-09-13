@@ -1,0 +1,560 @@
+/* ----------------------------------------
+    Variables
+---------------------------------------- */
+/* Colours */
+/* Typography */
+/* Sizing */
+/* ----------------------------------------
+    Mixins
+---------------------------------------- */
+/* Fade Out Siblings */
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,700|Poppins:700&display=swap");
+.fade-siblings:hover {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s; }
+
+.fade-siblings a:hover {
+  color: #fff; }
+
+/* Hover underline */
+.underline {
+  position: relative; }
+  .underline::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    right: 0;
+    bottom: -2px;
+    background-color: #fff;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .underline:hover::after {
+    left: 0;
+    right: auto;
+    width: 100%; }
+
+/* Box hover wipe */
+.wipe {
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.42, 0, 0.58, 1); }
+  .wipe::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1); }
+  .wipe:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%; }
+  .wipe.square::before {
+    content: "Back \A to top";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    text-align: center;
+    white-space: pre;
+    pointer-events: none;
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .wipe.square:hover::before {
+    color: #fff; }
+
+/* Mouse scroll animation */
+.mouse {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  height: 48px;
+  margin-left: -13px;
+  border-radius: 11px 11px 15px 15px;
+  border: 1px solid #fff;
+  z-index: 1; }
+
+.mouse span {
+  display: block;
+  width: 2px;
+  height: 5px;
+  margin: 6px auto;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  animation: scroll infinite 1s both; }
+
+@keyframes scroll {
+  0% {
+    filter: opacity(100%);
+    transform: translateY(0); }
+  100% {
+    filter: opacity(0%);
+    transform: translateY(20px); } }
+
+/* Particles.js background */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+  #particles canvas {
+    display: block;
+    filter: opacity(80%);
+    transform: scale(1);
+    transition: filter 0.8s ease, transform 1.4s ease; }
+
+/* ----------------------------------------
+    General Styles
+---------------------------------------- */
+html {
+  font-size: 20px;
+  overflow-x: hidden; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+  *:before, *:after {
+    box-sizing: inherit; }
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none; }
+  a.default,
+  a:link.default,
+  a:visited.default,
+  a:hover.default,
+  a:active.default {
+    text-decoration: underline;
+    text-transform: lowercase; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: normal;
+  text-align: justify; }
+
+p + p {
+  padding-top: 1em; }
+
+/* ----------------------------------------
+    Component Styles
+---------------------------------------- */
+.box {
+  display: flex;
+  align-items: center;
+  min-height: 4rem;
+  padding: 0 4rem;
+  border: solid 1px;
+  border-color: inherit;
+  white-space: nowrap; }
+
+.square {
+  max-width: 4rem;
+  padding: 0 2rem; }
+
+.arrow {
+  display: inline-block;
+  padding: 0.3em;
+  border: solid;
+  border-color: inherit;
+  border-width: 0 1.5px 1.5px 0; }
+
+.arrow.down {
+  transform: translate(-7.5px, -3px) rotate(45deg); }
+
+.arrow.up {
+  transform: translate(-7.5px, 3px) rotate(225deg); }
+
+/* ----------------------------------------
+    Home Styles
+---------------------------------------- */
+#myHome {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 4rem;
+  background: linear-gradient(135deg, #6c7b95, #464159);
+  z-index: -1;
+  color: #fff; }
+  #myHome header,
+  #myHome footer {
+    height: 4rem;
+    border-left: solid #fff 1px;
+    border-right: solid #fff 1px; }
+  #myHome .bar {
+    display: inline-block;
+    min-width: 5em;
+    margin: 0.5em 1.5em 0 0;
+    border-top: solid 5px #fafdcb; }
+  #myHome .content {
+    display: flex;
+    padding-top: 2rem; }
+  #myHome article {
+    width: 45%;
+    margin-top: auto; }
+    #myHome article p {
+      filter: opacity(60%);
+      padding-top: 1rem; }
+  #myHome h1 {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #fafdcb 10%, #aee7e8, #248ea9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 9rem;
+    line-height: 0.9em;
+    user-select: none; }
+  #myHome h2 {
+    margin-top: -0.25em;
+    font-weight: normal;
+    font-size: 1.5rem; }
+  #myHome nav {
+    font-size: 1.2rem; }
+    #myHome nav a::after {
+      background-color: #fafdcb; }
+    #myHome nav span + span::before {
+      content: "//";
+      padding: 0 1rem; }
+  #myHome header > * {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    transform: translate(0, -0.61em); }
+    #myHome header > *::before, #myHome header > *::after {
+      content: "";
+      display: inline-block;
+      border-top: solid #fff 1px; }
+    #myHome header > *::before {
+      width: 100%;
+      margin-right: 2rem; }
+    #myHome header > *::after {
+      width: 4rem;
+      margin-left: 2rem; }
+  #myHome footer {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column; }
+    #myHome footer > * {
+      display: flex;
+      align-items: center;
+      user-select: none;
+      transform: translate(0, 0em); }
+      #myHome footer > *::before, #myHome footer > *::after {
+        content: "";
+        display: inline-block;
+        border-top: solid #fff 1px; }
+      #myHome footer > *::before {
+        width: 100%;
+        margin-right: 2rem; }
+      #myHome footer > *::after {
+        width: 100%;
+        margin-left: 2rem; }
+
+/* ----------------------------------------
+    Portfolio Styles
+---------------------------------------- */
+#myDashpoint,
+#myDesign {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 4rem;
+  background: linear-gradient(135deg, #fff, whitesmoke);
+  z-index: -1;
+  position: relative; }
+  #myDashpoint header,
+  #myDashpoint footer,
+  #myDesign header,
+  #myDesign footer {
+    height: 4rem;
+    border-left: solid lightgray 1px;
+    border-right: solid lightgray 1px; }
+  #myDashpoint article,
+  #myDesign article {
+    display: flex;
+    justify-content: space-between;
+    width: 110%;
+    margin-top: 2rem;
+    margin-bottom: auto; }
+    #myDashpoint article p,
+    #myDesign article p {
+      color: #464159; }
+    #myDashpoint article > div:first-child,
+    #myDesign article > div:first-child {
+      width: 100%; }
+    #myDashpoint article > div:first-child + div,
+    #myDesign article > div:first-child + div {
+      align-self: center;
+      padding-left: 2rem; }
+  #myDashpoint h1,
+  #myDesign h1 {
+    font-size: 1.2rem;
+    text-transform: uppercase; }
+  #myDashpoint h2,
+  #myDesign h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    user-select: none; }
+  #myDashpoint aside,
+  #myDesign aside {
+    display: flex;
+    padding-top: 4rem; }
+    #myDashpoint aside > *,
+    #myDesign aside > * {
+      flex: 1 1 0;
+      padding-right: 2rem;
+      word-spacing: 0.2em; }
+      #myDashpoint aside > * span,
+      #myDesign aside > * span {
+        word-spacing: normal; }
+  #myDashpoint header > *,
+  #myDesign header > * {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    transform: translate(0, -0.61em); }
+    #myDashpoint header > *::before, #myDashpoint header > *::after,
+    #myDesign header > *::before,
+    #myDesign header > *::after {
+      content: "";
+      display: inline-block;
+      border-top: solid lightgray 1px; }
+    #myDashpoint header > *::before,
+    #myDesign header > *::before {
+      width: 4rem;
+      margin-right: 2rem; }
+    #myDashpoint header > *::after,
+    #myDesign header > *::after {
+      width: 100%;
+      margin-left: 2rem; }
+  #myDashpoint footer,
+  #myDesign footer {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column; }
+    #myDashpoint footer > *,
+    #myDesign footer > * {
+      display: flex;
+      align-items: center;
+      user-select: none;
+      transform: translate(0, 1.95em); }
+      #myDashpoint footer > *::before, #myDashpoint footer > *::after,
+      #myDesign footer > *::before,
+      #myDesign footer > *::after {
+        content: "";
+        display: inline-block;
+        border-top: solid lightgray 1px; }
+      #myDashpoint footer > *::before,
+      #myDesign footer > *::before {
+        width: 100%;
+        margin-right: 2rem; }
+      #myDashpoint footer > *::after,
+      #myDesign footer > *::after {
+        width: 100%;
+        margin-left: 2rem; }
+      #myDashpoint footer > * > span,
+      #myDesign footer > * > span {
+        width: 10%;
+        margin: 0 2rem;
+        border-top: solid 1px;
+        border-color: lightgrey; }
+  #myDashpoint .back-to-top,
+  #myDesign .back-to-top {
+    position: absolute;
+    top: calc(4rem / 2);
+    right: calc(4rem / 2);
+    transform: translate(0, 0);
+    background: linear-gradient(135deg, #f8f8f8, #f7f7f7); }
+
+#myDashpoint {
+  color: #00adb5; }
+  #myDashpoint .bar {
+    display: inline-block;
+    min-width: 5em;
+    margin: 0.5em 1.5em 0 0;
+    border-top: solid 5px #00adb5; }
+  #myDashpoint .content {
+    display: flex;
+    padding-top: 2rem; }
+  #myDashpoint img {
+    width: 90%;
+    margin-left: 2rem; }
+  #myDashpoint .wipe::before {
+    background: #00adb5; }
+  #myDashpoint .wipe:hover {
+    color: #fff;
+    border: solid 1px #00adb5; }
+
+#myDesign {
+  color: #2e557a; }
+  #myDesign .bar {
+    display: inline-block;
+    min-width: 5em;
+    margin: 0.5em 1.5em 0 0;
+    border-top: solid 5px #2e557a; }
+  #myDesign .content {
+    display: flex;
+    padding-top: 2rem; }
+  #myDesign img {
+    width: 75%;
+    margin-left: 4rem; }
+  #myDesign .wipe::before {
+    background: #2e557a; }
+  #myDesign .wipe:hover {
+    color: #fff;
+    border: solid 1px #2e557a; }
+
+/* ----------------------------------------
+    Contact Styles
+---------------------------------------- */
+#myContact {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 4rem;
+  background: linear-gradient(135deg, #6c7b95, #464159);
+  z-index: -1;
+  position: relative;
+  color: #fff; }
+  #myContact header,
+  #myContact footer {
+    height: 4rem;
+    border-left: solid #fff 1px;
+    border-right: solid #fff 1px; }
+  #myContact .bar {
+    display: inline-block;
+    min-width: 5em;
+    margin: 0.5em 1.5em 0 0;
+    border-top: solid 5px #fff; }
+  #myContact .content {
+    display: flex;
+    padding-top: 2rem; }
+  #myContact article {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: auto; }
+    #myContact article a {
+      margin-right: 1rem; }
+      #myContact article a img {
+        margin-top: 1rem; }
+    #myContact article form {
+      margin-left: auto;
+      transform: translate(0, 0); }
+      #myContact article form > * {
+        margin-bottom: 1rem;
+        padding-bottom: 0.2em;
+        background: transparent;
+        outline: transparent;
+        font-family: "Barlow Semi Condensed", sans-serif;
+        font-size: 1rem; }
+      #myContact article form input,
+      #myContact article form textarea {
+        display: block;
+        width: calc(50vw - 2 * 4rem - 2rem);
+        color: #fff;
+        border: none;
+        border-bottom: solid #fff 1px; }
+        #myContact article form input:focus,
+        #myContact article form textarea:focus {
+          color: inherit; }
+          #myContact article form input:focus::placeholder,
+          #myContact article form textarea:focus::placeholder {
+            filter: opacity(0%); }
+        #myContact article form input::placeholder,
+        #myContact article form textarea::placeholder {
+          color: inherit;
+          filter: opacity(50%); }
+      #myContact article form textarea {
+        margin-right: 2rem;
+        resize: none; }
+      #myContact article form button {
+        margin-top: 2rem;
+        color: inherit;
+        text-transform: uppercase;
+        cursor: pointer; }
+  #myContact h1 {
+    font-size: 1.2rem;
+    text-transform: uppercase; }
+  #myContact h2 {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #fff, whitesmoke);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5rem;
+    line-height: 1em;
+    user-select: none; }
+  #myContact header > * {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    transform: translate(0, -0.61em); }
+    #myContact header > *::before, #myContact header > *::after {
+      content: "";
+      display: inline-block;
+      border-top: solid lightgray 1px; }
+    #myContact header > *::before {
+      width: 4rem;
+      margin-right: 2rem; }
+    #myContact header > *::after {
+      width: 100%;
+      margin-left: 2rem; }
+  #myContact footer {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-size: 1.2rem; }
+    #myContact footer > * {
+      display: flex;
+      align-items: center;
+      user-select: none;
+      transform: translate(0, 0.6em);
+      white-space: nowrap;
+      word-spacing: 0.2em; }
+      #myContact footer > *::before, #myContact footer > *::after {
+        content: "";
+        display: inline-block;
+        border-top: solid lightgray 1px; }
+      #myContact footer > *::before {
+        width: 100%;
+        margin-right: 2rem; }
+      #myContact footer > *::after {
+        width: 100%;
+        margin-left: 2rem; }
+      #myContact footer > * span {
+        word-spacing: normal; }
+  #myContact .back-to-top {
+    position: absolute;
+    top: calc(4rem / 2);
+    right: calc(4rem / 2);
+    transform: translate(0, 0);
+    background: linear-gradient(135deg, #4a4d64, #484d60); }
+  #myContact .wipe::before {
+    background: #fff; }
+  #myContact .wipe:hover {
+    color: #6c7b95;
+    border: solid 1px #fff; }
+  #myContact .wipe:hover::before {
+    color: #6c7b95; }
+
+
+/*# sourceMappingURL=/main.fb6bbcaf.css.map */
