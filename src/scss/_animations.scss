@@ -1,45 +1,52 @@
+/* Fade Out Siblings */
+.fade-siblings {
+  &:hover {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
+
 /* Hover underline */
 .underline {
   position: relative;
-  transition: filter 0.3s;
 
   &::after {
     content: "";
     position: absolute;
     height: 2px;
     width: 0;
-    left: 0;
+    right: 0;
     bottom: -2px;
-    background-color: $primary-tint;
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    background-color: #fff;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-  &:hover {
-    filter: opacity(75%);
-
-    &:after {
-      width: 100%;
-    }
+  &:hover::after {
+    left: 0;
+    right: auto;
+    width: 100%;
   }
 }
 
 /* Box hover wipe */
 .wipe {
   position: relative;
-  transition: color 0.3s cubic-bezier(0.42, 0, 0.58, 1) 0s;
+  transition: color 0.3s cubic-bezier(0.42, 0, 0.58, 1);
 
   &::before {
     content: "";
-    display: block;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     height: 100%;
-    width: 0px;
+    width: 0;
     z-index: -1;
-    transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1) 0s;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   }
   &:hover::before {
-    left: 0%;
+    left: 0;
     right: auto;
     width: 100%;
   }
@@ -54,7 +61,7 @@
       white-space: pre;
       pointer-events: none;
       z-index: 1;
-      transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+      transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
     &:hover::before {
       color: #fff;
@@ -82,19 +89,16 @@
   background: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-name: scroll;
+  animation: scroll infinite 1s both;
 }
 
 @keyframes scroll {
   0% {
-    opacity: 1;
+    filter: opacity(100%);
     transform: translateY(0);
   }
   100% {
-    opacity: 0;
+    filter: opacity(0%);
     transform: translateY(20px);
   }
 }

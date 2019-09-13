@@ -84,7 +84,7 @@ p + p {
 ---------------------------------------- */
 #home {
   @include container($gradient-dark, #fff);
-  @include textbox($primary-tint);
+  @include textbox($primary);
   color: #fff;
 
   article {
@@ -112,6 +112,9 @@ p + p {
   nav {
     font-size: $nav-size;
 
+    a::after {
+      background-color: $primary;
+    }
     span + span::before {
       content: "//";
       padding: 0 $padding-small;

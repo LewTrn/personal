@@ -6,188 +6,193 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Lewis Tran | Front End Developer</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css" />
+
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <!-- Home -->
-    <section id="home">
-      <header>
-        <nav>
-          <span><a class="underline" href="#dashpoint">Portfolio</a></span>
-          <span><a class="underline" href="#contact">Contact</a></span>
-          <span><a class="underline" href="#">LinkedIn</a></span>
-          <span><a class="underline" href="#">GitHub</a></span>
-        </nav>
-      </header>
+    <main id="fullpage">
+      <!-- Home -->
+      <section id="home" class="section">
+        <header>
+          <nav class="fade-siblings">
+            <span><a class="underline" href="#Dashpoint">Portfolio</a></span>
+            <span><a class="underline" href="#Contact">Contact</a></span>
+            <span><a class="underline" href="https://www.linkedin.com/in/lewis-tran/" target="_blank" rel="noreferrer">LinkedIn</a></span>
+            <span><a class="underline" href="https://github.com/LewTrn" target="_blank" rel="noreferrer">GitHub</a></span>
+          </nav>
+        </header>
 
-      <article>
-        <h1>Lewis Tran</h1>
-        <div class="content">
-          <div class="bar"></div>
-          <div>
-            <h2>Hi, my name is Lewis and I'm a <strong>Front End Developer</strong></h2>
-            <p>
-              I got my first taste for front end development while studying at Imperial College London, developing web applications for engineering students. Since graduating in the summer, I have
-              continued to dedicate my efforts pursing a passion for web development, exercising my technical skills through original and engaging front end projects.
-            </p>
+        <article>
+          <h1>Lewis Tran</h1>
+          <div class="content">
+            <div class="bar"></div>
+            <div>
+              <h2>Hi, my name is Lewis and I'm a <strong>Front End Developer</strong></h2>
+              <p>
+                I got my first taste for front end development while studying at Imperial College London, developing web applications for engineering students. Since graduating in the summer, I have
+                continued to dedicate my efforts pursing a passion for web development, exercising my technical skills through original and engaging front end projects.
+              </p>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <footer>
-        <div>
-          <div class="mouse">
+        <footer>
+          <div>
+            <div class="mouse">
+              <span></span>
+            </div>
+          </div>
+        </footer>
+      </section>
+
+      <!-- Dashpoint -->
+      <section id="dashpoint" class="section">
+        <header>
+          <h1>Portfolio</h1>
+        </header>
+
+        <div class="back-to-top">
+          <a class="box square wipe" href="#Home"><span class="arrow up"></span></a>
+        </div>
+
+        <article>
+          <div>
+            <h2>Dashpoint</h2>
+            <h3>A dynamic personal dashboard for focus and producivity</h3>
+            <div class="content">
+              <div class="bar"></div>
+              <div>
+                <p>
+                  Inspired by the Momentum Chrome extension, Dashpoint provides users with a stylish, yet practical, browser start page for improving personal focus and workflow. The goal was to
+                  develop a lightweight, customisable dashboard focused on utility and the user experience. Dashpoint offers a range of custom workflow tools, including a notepad, to-do list, timer,
+                  calculator and colour converter, as well as features such as local weather forecasts and custom bookmarks.
+                </p>
+                <p>
+                  This project was developed using vanilla JavaScript, leveraging local storage and DOM manipulation capabilities to deliver a fast, lightweight user experience. The application was
+                  built upon the Bulma CSS framework, and makes use of API data served by Unsplash and Dark Sky Weather. The application is fully responsive and supports desktop, tablet and mobile
+                  devices.
+                </p>
+                <aside>
+                  <div>
+                    <h4>Stack</h4>
+                    <p>HTML5 - CSS3 - Sass - JavaScript</p>
+                  </div>
+                  <div>
+                    <h4>Libraries / APIs</h4>
+                    <p>Bulma // Unsplash - <span>Dark Sky Weather</span></p>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="assets/dashpoint@2x.png" alt="Dashpoint mockup" />
+          </div>
+        </article>
+
+        <footer>
+          <div>
+            <a class="box wipe" href="https://lewtrn.github.io/dashpoint/" target="_blank" rel="noreferrer"><span>Visit Website</span></a>
             <span></span>
+            <a class="box wipe" href="https://github.com/LewTrn/dashpoint" target="_blank" rel="noreferrer"><span>View Source</span></a>
           </div>
+        </footer>
+      </section>
+
+      <!-- Design Learning Objects -->
+      <section id="design" class="section">
+        <header>
+          <h1>Portfolio</h1>
+        </header>
+
+        <div class="back-to-top">
+          <a class="box square wipe" href="#Home"><span class="arrow up"></span></a>
         </div>
-      </footer>
-    </section>
 
-    <!-- Dashpoint -->
-    <section id="dashpoint">
-      <header>
-        <h1>Portfolio</h1>
-      </header>
-
-      <div class="back-to-top">
-        <a class="box square wipe" href="#home"><span class="arrow up"></span></a>
-      </div>
-
-      <article>
-        <div>
-          <h2>Dashpoint</h2>
-          <h3>A dynamic personal dashboard for focus and producivity</h3>
-          <div class="content">
-            <div class="bar"></div>
-            <div>
-              <p>
-                Inspired by the Momentum Chrome extension, Dashpoint provides users with a stylish, yet practical, browser start page for improving personal focus and workflow. The goal was to develop
-                a lightweight, customisable dashboard focused on utility and the user experience. Dashpoint offers a range of custom workflow tools, including a notepad, to-do list, timer, calculator
-                and colour converter, as well as features such as local weather forecasts and custom bookmarks.
-              </p>
-              <p>
-                This project was developed using vanilla JavaScript, leveraging local storage and DOM manipulation capabilities to deliver a fast, lightweight user experience. The application was
-                built upon the Bulma CSS framework, and makes use of API data served by Unsplash and Dark Sky Weather. The application is fully responsive and supports desktop, tablet and mobile
-                devices.
-              </p>
-              <aside>
-                <div>
-                  <h4>Stack</h4>
-                  <p>HTML5 - CSS3 - Sass - JavaScript</p>
-                </div>
-                <div>
-                  <h4>Libraries / APIs</h4>
-                  <p>Bulma // Unsplash - <span>Dark Sky Weather</span></p>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </div>
-        <div>
-          <img src="assets/dashpoint@2x.png" alt="Dashpoint mockup" />
-        </div>
-      </article>
-
-      <footer>
-        <div>
-          <a class="box wipe" href="#"><span>Visit Website</span></a>
-          <span></span>
-          <a class="box wipe" href="#"><span>View Source</span></a>
-        </div>
-      </footer>
-    </section>
-
-    <!-- Design Learning Objects -->
-    <section id="design">
-      <header>
-        <h1>Portfolio</h1>
-      </header>
-
-      <div class="back-to-top">
-        <a class="box square wipe" href="#home"><span class="arrow up"></span></a>
-      </div>
-
-      <article>
-        <div>
-          <h2>Design Learning Objects</h2>
-          <h3>Interactive web applications and engaging learning experiences for engineering students</h3>
-          <div class="content">
-            <div class="bar"></div>
-            <div>
-              <p>
-                Design Learning Objects provides engineering students with new and compelling learning experiences to support the academic teaching at Imperial College London. The goal was to utilise
-                front end technologies to improve the understanding of particular engineering topics by providing students with interactive learning tools and visual demonstrations.
-              </p>
-              <p>
-                Two static web applications were developed, each one addressing an individual engineering topic. Working closely with academics, various interactive features were introduced and
-                implemented using libraries such as JQuery, p5.js and Plotly.js. The project was hosted using AWS and is available at
-                <a class="default" href="http://designlearningobjects.com/" target="_blank" rel="noreferrer">www.designlearningobjects.com</a>.
-              </p>
-              <p>
-                Design Learning Objects will be introduced to undergraduate students in October 2019 as part of the Imperial College Mechanical Engineering course.
-              </p>
-              <aside>
-                <div>
-                  <h4>Stack</h4>
-                  <p>HTML5 - CSS3 - JavaScript</p>
-                </div>
-                <div>
-                  <h4>Libraries</h4>
-                  <p>JQuery - Bootstrap - p5.js - Plotly.js</p>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </div>
-        <div>
-          <img src="assets/design@2x.png" alt="Design Learning Objects mockup" />
-        </div>
-      </article>
-
-      <footer>
-        <div>
-          <a class="box wipe" href="#"><span>Visit Website</span></a>
-          <span></span>
-          <a class="box wipe" href="#"><span>View Source</span></a>
-        </div>
-      </footer>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <header>
-        <h1>Contact</h1>
-      </header>
-
-      <div class="back-to-top">
-        <a class="box square wipe" href="#home"><span class="arrow up"></span></a>
-      </div>
-
-      <article>
-        <h2>
-          Let's Get <br />
-          In Touch
-        </h2>
-        <div class="content">
-          <div class="bar"></div>
+        <article>
           <div>
-            <p>
-              Interested in finding out more about me or my work?
-            </p>
-            <a class="underline" href=""><img src="assets/linkedin.svg" alt="LinkedIn"/></a>
-            <a class="underline" href=""><img src="assets/github.svg" alt="GitHub"/></a>
+            <h2>Design Learning Objects</h2>
+            <h3>Interactive web applications and engaging learning experiences for engineering students</h3>
+            <div class="content">
+              <div class="bar"></div>
+              <div>
+                <p>
+                  Design Learning Objects provides engineering students with new and compelling learning experiences to support the academic teaching at Imperial College London. The goal was to
+                  utilise front end technologies to improve the understanding of particular engineering topics by providing students with interactive learning tools and visual demonstrations.
+                </p>
+                <p>
+                  Two static web applications were developed, each one addressing an individual engineering topic. Working closely with academics, various interactive features were introduced and
+                  implemented using libraries such as JQuery, p5.js and Plotly.js. The project was hosted using AWS and is available at
+                  <a class="default" href="http://designlearningobjects.com/" target="_blank" rel="noreferrer">www.designlearningobjects.com</a>.
+                </p>
+                <p>
+                  Design Learning Objects will be introduced to undergraduate students in October 2019 as part of the Imperial College Mechanical Engineering course.
+                </p>
+                <aside>
+                  <div>
+                    <h4>Stack</h4>
+                    <p>HTML5 - CSS3 - JavaScript</p>
+                  </div>
+                  <div>
+                    <h4>Libraries</h4>
+                    <p>JQuery - Bootstrap - p5.js - Plotly.js</p>
+                  </div>
+                </aside>
+              </div>
+            </div>
           </div>
-          <form>
-            <input type="text" placeholder="Your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
-            <textarea rows="5" placeholder="Your message" required></textarea>
-            <button class="box wipe" type="submit">Send message</button>
-          </form>
-        </div>
-      </article>
+          <div>
+            <img src="assets/design@2x.png" alt="Design Learning Objects mockup" />
+          </div>
+        </article>
 
-      <footer>
-        <span><span>Lewis Tran &nbsp;</span>I 2019</span>
-      </footer>
-    </section>
+        <footer>
+          <div>
+            <a class="box wipe" href="http://designlearningobjects.com/" target="_blank" rel="noreferrer"><span>Visit Website</span></a>
+            <span></span>
+            <a class="box wipe" href="https://github.com/LewTrn/DesignLearningObjects" target="_blank" rel="noreferrer"><span>View Source</span></a>
+          </div>
+        </footer>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <header>
+          <h1>Contact</h1>
+        </header>
+
+        <div class="back-to-top">
+          <a class="box square wipe" href="#Home"><span class="arrow up"></span></a>
+        </div>
+
+        <article>
+          <h2>
+            Let's Get <br />
+            In Touch
+          </h2>
+          <div class="content">
+            <div class="bar"></div>
+            <div>
+              <p>
+                Interested in finding out more about me or my work?
+              </p>
+              <a class="underline" href="https://www.linkedin.com/in/lewis-tran/" target="_blank" rel="noreferrer"><img src="assets/linkedin.svg" alt="LinkedIn"/></a>
+              <a class="underline" href="https://github.com/LewTrn" target="_blank" rel="noreferrer"><img src="assets/github.svg" alt="GitHub"/></a>
+            </div>
+            <form>
+              <input type="text" placeholder="Your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+              <textarea rows="5" placeholder="Your message" required></textarea>
+              <button class="box wipe" type="submit">Send message</button>
+            </form>
+          </div>
+        </article>
+
+        <footer>
+          <span><span>Lewis Tran &nbsp;</span>I 2019</span>
+        </footer>
+      </section>
+    </main>
   </body>
 </html>
