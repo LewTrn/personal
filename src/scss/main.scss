@@ -8,7 +8,6 @@
 html {
   font-size: 20px;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 * {
   box-sizing: border-box;
@@ -82,13 +81,13 @@ p + p {
 /* ----------------------------------------
     Home Styles
 ---------------------------------------- */
-#home {
+#myHome {
   @include container($gradient-dark, #fff);
   @include textbox($primary);
   color: #fff;
 
   article {
-    width: 45.6%;
+    width: 45%;
     margin-top: auto;
 
     p {
@@ -139,8 +138,8 @@ p + p {
 /* ----------------------------------------
     Portfolio Styles
 ---------------------------------------- */
-#dashpoint,
-#design {
+#myDashpoint,
+#myDesign {
   @include container($gradient-light, lightgray);
   position: relative;
 
@@ -214,8 +213,7 @@ p + p {
     background: linear-gradient(135deg, #f8f8f8, #f7f7f7);
   }
 }
-
-#dashpoint {
+#myDashpoint {
   @include textbox($dash-primary);
   color: $dash-primary;
 
@@ -234,7 +232,7 @@ p + p {
     }
   }
 }
-#design {
+#myDesign {
   @include textbox($design-primary);
   color: $design-primary;
 
@@ -257,7 +255,7 @@ p + p {
 /* ----------------------------------------
     Contact Styles
 ---------------------------------------- */
-#contact {
+#myContact {
   @include container($gradient-dark, #fff);
   @include textbox(#fff);
   position: relative;

@@ -8,7 +8,8 @@ List of online resources used in this project.
 
 ### Libraries
 
-- fullPage.js - [fullPage.js](https://alvarotrigo.com/fullPage/ "alvarotrigo.com/fullPage")
+- Page Scroll Library - [fullPage.js](https://alvarotrigo.com/fullPage/ "alvarotrigo.com/fullPage/")
+- Particle Animation Library - [particles.js](https://vincentgarreau.com/particles.js/ "vincentgarreau.com/particles.js/")
 
 ## Author
 
