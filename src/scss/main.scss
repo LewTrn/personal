@@ -71,11 +71,8 @@ p + p {
   border-color: inherit;
   border-width: 0 1.5px 1.5px 0;
 }
-.arrow.down {
-  transform: translate(-7.5px, -3px) rotate(45deg);
-}
 .arrow.up {
-  transform: translate(-7.5px, 3px) rotate(225deg);
+  transform: translate(-0.3em, 0.1em) rotate(225deg);
 }
 
 /* ----------------------------------------
@@ -91,7 +88,7 @@ p + p {
     margin-top: auto;
 
     p {
-      filter: opacity(60%);
+      filter: opacity(75%);
       padding-top: $padding-small;
     }
   }
@@ -142,14 +139,12 @@ p + p {
 #myDesign {
   @include container($gradient-light, lightgray);
   position: relative;
+  justify-content: space-between;
 
   article {
     display: flex;
-    justify-content: space-between;
-
     width: 110%;
     margin-top: $padding-medium;
-    margin-bottom: auto;
 
     p {
       color: $secondary-dark; // ### Change this to palette dark later ###
@@ -259,22 +254,28 @@ p + p {
   @include container($gradient-dark, #fff);
   @include textbox(#fff);
   position: relative;
+  justify-content: space-between;
   color: #fff;
 
   article {
-    width: 100%;
-    margin-top: $padding-medium;
-    margin-bottom: auto;
+    display: flex;
+    height: 80%;
+    padding-top: $padding-medium;
 
+    & > div:first-child {
+      margin-right: auto;
+    }
     a {
       margin-right: $padding-small;
 
       img {
+        height: 2.5em;
         margin-top: $padding-small;
       }
     }
     form {
-      margin-left: auto;
+      align-self: flex-end;
+      padding-left: $padding-large;
       transform: translate(0, 0); // Enables wipe animation
 
       & > * {
@@ -310,15 +311,10 @@ p + p {
         resize: none;
       }
       button {
-        display: inline-block;
-        margin-top: $padding-medium;
         margin-right: $padding-medium;
         color: inherit;
         text-transform: uppercase;
         cursor: pointer;
-      }
-      div[data-netlify-recaptcha] {
-        display: inline-block;
       }
     }
   }
@@ -373,3 +369,8 @@ p + p {
     }
   }
 }
+
+/* ----------------------------------------
+    Media Queries
+---------------------------------------- */
+@import "./media-queries";

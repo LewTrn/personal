@@ -1,0 +1,200 @@
+/* ----------------------------------------
+    Desktop Queries
+---------------------------------------- */
+// Set font size for desktop
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: calc(1vw + 2px);
+  }
+}
+// Makes better use of space on taller desktops
+@media only screen and (max-aspect-ratio: 3/2) {
+  html {
+    font-size: 1.25vw;
+  }
+
+  #myHome {
+    article {
+      width: 60%;
+    }
+  }
+  #myDashpoint,
+  #myDesign {
+    article {
+      & > div:first-child + div {
+        padding-left: 0;
+      }
+    }
+  }
+  #myContact {
+    article {
+      flex-direction: column;
+
+      form {
+        align-self: auto;
+        padding-top: $padding-large;
+        padding-left: 6em;
+      }
+    }
+  }
+}
+// Responsive response to portrait mode or all mobile
+@media only screen and (orientation: portrait), only screen and (max-width: 849px) and (orientation: landscape) {
+  #myHome {
+    article {
+      width: 95%;
+    }
+  }
+  #myDashpoint,
+  #myDesign {
+    article {
+      flex-direction: column;
+      width: 100%;
+
+      & > div:first-child {
+        width: 95%;
+      }
+      & > div:first-child + div {
+        width: 70%;
+        margin: 0 auto;
+        padding-top: $padding-medium;
+        padding-left: 0;
+      }
+    }
+    img {
+      width: 100%;
+      margin: 0;
+    }
+    aside {
+      padding-top: $padding-medium;
+    }
+  }
+  #myContact {
+    article {
+      flex-direction: column;
+
+      form {
+        align-self: auto;
+        padding-top: $padding-large;
+        padding-left: 6em;
+
+        input,
+        textarea {
+          width: 95%;
+        }
+      }
+    }
+  }
+}
+// Reduces margin padding on small, landscape screens
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .back-to-top {
+    top: calc(#{$padding-medium} / 2) !important;
+    right: calc(#{$padding-medium} / 2) !important;
+  }
+}
+/* ----------------------------------------
+    Tablet Queries
+---------------------------------------- */
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+  html {
+    font-size: 2vw;
+  }
+}
+
+/* ----------------------------------------
+    Mobile Queries
+---------------------------------------- */
+// Set font size and padding for all mobile devices
+@media only screen and (max-width: 849px) and (orientation: landscape), only screen and (max-width: 767px) and (orientation: portrait) {
+  html {
+    font-size: 14px;
+  }
+  section {
+    padding: $padding-medium !important;
+
+    article {
+      width: 100% !important;
+      text-align: left;
+
+      h2,
+      h3,
+      p {
+        text-align: left;
+      }
+    }
+  }
+
+  #myHome {
+    h1,
+    h2,
+    p {
+      text-align: center;
+    }
+    h1 {
+      font-size: 6rem;
+    }
+    h2 {
+      padding: 0 2.5em;
+    }
+    header,
+    footer {
+      display: none;
+    }
+  }
+  #myDashpoint,
+  #myDesign {
+    article {
+      & > div:first-child + div {
+        width: 100%;
+      }
+    }
+    header > *,
+    footer > * {
+      &::before {
+        margin-right: $padding-small;
+      }
+      &::after {
+        margin-left: $padding-small;
+      }
+    }
+    footer > * {
+      transform: translate(0, 1.65em);
+
+      & > span {
+        margin: 0.5em;
+      }
+    }
+
+    .box {
+      min-height: $padding-medium;
+      padding: $padding-small;
+    }
+  }
+  #myContact {
+    h2 {
+      font-size: 4rem;
+    }
+    form {
+      padding-left: 0 !important;
+
+      button {
+        margin: 0 auto !important;
+      }
+    }
+    header > *,
+    footer > * {
+      &::before {
+        margin-right: $padding-small;
+      }
+      &::after {
+        margin-left: $padding-small;
+      }
+    }
+  }
+
+  .back-to-top,
+  .bar {
+    display: none !important;
+  }
+}

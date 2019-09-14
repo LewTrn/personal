@@ -16,7 +16,7 @@
   <body>
     <main id="fullpage">
       <!-- Home -->
-      <section id="myHome" class="section">
+      <section id="myHome" class="section fp-auto-height-responsive">
         <header>
           <nav class="fade-siblings">
             <span><a class="underline" href="#Dashpoint">Portfolio</a></span>
@@ -30,7 +30,7 @@
 
         <article>
           <div>
-            <h1>Lewis Tran</h1>
+            <h1>Lewis <br> Tran</h1>
             <div class="content">
               <div class="bar"></div>
               <div>
@@ -54,7 +54,7 @@
       </section>
 
       <!-- Dashpoint -->
-      <section id="myDashpoint" class="section">
+      <section id="myDashpoint" class="section fp-auto-height-responsive">
         <header>
           <h1>Portfolio</h1>
         </header>
@@ -87,7 +87,7 @@
                   </div>
                   <div>
                     <h4>Libraries / APIs</h4>
-                    <p>Bulma // Unsplash - <span>Dark Sky Weather</span></p>
+                    <p>Bulma // Unsplash - <span>Dark Sky</span></p>
                   </div>
                 </aside>
               </div>
@@ -108,7 +108,7 @@
       </section>
 
       <!-- Design Learning Objects -->
-      <section id="myDesign" class="section">
+      <section id="myDesign" class="section fp-auto-height-responsive">
         <header>
           <h1>Portfolio</h1>
         </header>
@@ -164,7 +164,7 @@
       </section>
 
       <!-- Contact -->
-      <section id="myContact" class="section">
+      <section id="myContact" class="section fp-auto-height-responsive">
         <header>
           <h1>Contact</h1>
         </header>
@@ -174,26 +174,28 @@
         </div>
 
         <article>
-          <h2>
-            Let's Get <br>
-            In Touch
-          </h2>
-          <div class="content">
-            <div class="bar"></div>
-            <div>
-              <p>
-                Interested in finding out more about me or my work?
-              </p>
-              <a class="underline" href="https://www.linkedin.com/in/lewis-tran/" target="_blank" rel="noreferrer"><img src="/linkedin.b71b7340.svg" alt="LinkedIn"></a>
-              <a class="underline" href="https://github.com/LewTrn" target="_blank" rel="noreferrer"><img src="/github.1d8dc012.svg" alt="GitHub"></a>
+          <div>
+            <h2>
+              Let's Get <br>
+              In Touch
+            </h2>
+            <div class="content">
+              <div class="bar"></div>
+              <div>
+                <p>
+                  Interested in finding out more about me or my work?
+                </p>
+                <a class="underline" href="https://www.linkedin.com/in/lewis-tran/" target="_blank" rel="noreferrer"><img src="/linkedin.b71b7340.svg" alt="LinkedIn"></a>
+                <a class="underline" href="https://github.com/LewTrn" target="_blank" rel="noreferrer"><img src="/github.1d8dc012.svg" alt="GitHub"></a>
+              </div>
             </div>
-            <form name="contact" method="POST" data-netlify="true">
-              <input name="email" type="email" placeholder="Your email address" aria-label="Email address" required="">
-              <textarea name="message" rows="5" placeholder="Your message" aria-label="Message" required=""></textarea>
-              <button class="box wipe" type="submit">Send message</button>
-              <div data-netlify-recaptcha="true"></div>
-            </form>
           </div>
+          <form name="Contact Form" method="POST" data-netlify="true">
+            <input name="Email" type="email" placeholder="Your email address" aria-label="Email address">
+            <textarea name="Message" rows="5" placeholder="Your message" aria-label="Message"></textarea>
+            <div data-netlify-recaptcha="true"></div>
+            <button class="box wipe" type="submit">Send message</button>
+          </form>
         </article>
 
         <footer>
