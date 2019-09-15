@@ -80,7 +80,7 @@ $translate-mouse: 0em;
 @mixin textbox($bar-color) {
   .bar {
     display: inline-block;
-    min-width: 5em;
+    min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px $bar-color;
   }

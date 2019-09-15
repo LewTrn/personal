@@ -4,15 +4,12 @@
 // Set font size for desktop
 @media only screen and (min-width: 768px) {
   html {
-    font-size: calc(1vw + 2px);
+    font-size: calc(0.5vmax + 10px);
   }
 }
-// Makes better use of space on taller desktops
-@media only screen and (max-aspect-ratio: 3/2) {
-  html {
-    font-size: 1.25vw;
-  }
 
+// Makes better use of taller desktops
+@media only screen and (max-aspect-ratio: 3/2) {
   #myHome {
     article {
       width: 60%;
@@ -26,23 +23,32 @@
       }
     }
   }
-  #myContact {
-    article {
-      flex-direction: column;
 
-      form {
-        align-self: auto;
-        padding-top: $padding-large;
-        padding-left: 6em;
+  // Rearrange contact form if height is suitable
+  @media only screen and (min-height: 900px), only screen and (orientation: portrait) {
+    #myContact {
+      article {
+        flex-direction: column;
+        margin-top: $padding-small;
+
+        form {
+          align-self: auto;
+          padding-top: $padding-medium;
+          padding-left: calc(5vw + #{$padding-small});
+        }
+        input,
+        textarea {
+          min-width: 50vmax;
+        }
       }
     }
   }
 }
-// Responsive response to portrait mode or all mobile
-@media only screen and (orientation: portrait), only screen and (max-width: 849px) and (orientation: landscape) {
+// Approaching portrait orientation or landscape mobiles
+@media only screen and (max-aspect-ratio: 11/10), screen and (max-width: 849px) and (orientation: landscape) {
   #myHome {
     article {
-      width: 95%;
+      width: calc(100% - 5vw - #{$padding-small});
     }
   }
   #myDashpoint,
@@ -50,82 +56,49 @@
     article {
       flex-direction: column;
       width: 100%;
+      height: 70vh;
+      margin-top: 0;
 
       & > div:first-child {
-        width: 95%;
+        width: calc(100% - 5vw - #{$padding-small});
       }
       & > div:first-child + div {
-        width: 70%;
-        margin: 0 auto;
+        min-height: 0;
         padding-top: $padding-medium;
-        padding-left: 0;
+        text-align: center;
       }
-    }
-    img {
-      width: 100%;
-      margin: 0;
     }
     aside {
       padding-top: $padding-medium;
     }
-  }
-  #myContact {
-    article {
-      flex-direction: column;
-
-      form {
-        align-self: auto;
-        padding-top: $padding-large;
-        padding-left: 6em;
-
-        input,
-        textarea {
-          width: 95%;
-        }
-      }
+    img {
+      height: 100%;
+      width: auto;
+      margin: 0;
     }
-  }
-}
-// Reduces margin padding on small, landscape screens
-@media only screen and (max-width: 767px) and (orientation: landscape) {
-  .back-to-top {
-    top: calc(#{$padding-medium} / 2) !important;
-    right: calc(#{$padding-medium} / 2) !important;
-  }
-}
-/* ----------------------------------------
-    Tablet Queries
----------------------------------------- */
-@media only screen and (min-width: 768px) and (orientation: portrait) {
-  html {
-    font-size: 2vw;
   }
 }
 
 /* ----------------------------------------
     Mobile Queries
 ---------------------------------------- */
-// Set font size and padding for all mobile devices
-@media only screen and (max-width: 849px) and (orientation: landscape), only screen and (max-width: 767px) and (orientation: portrait) {
+// Any portrait mobile or landscape mobile below 850px (to distinguish from portrait tablets)
+@media only screen and (max-width: 767px), screen and (max-width: 849px) and (orientation: landscape) {
   html {
-    font-size: 14px;
+    font-size: 15px;
   }
+
   section {
     padding: $padding-medium !important;
-
-    article {
-      width: 100% !important;
-      text-align: left;
-
-      h2,
-      h3,
-      p {
-        text-align: left;
-      }
-    }
+  }
+  header {
+    display: none !important;
   }
 
   #myHome {
+    article {
+      width: 100%;
+    }
     h1,
     h2,
     p {
@@ -135,60 +108,70 @@
       font-size: 6rem;
     }
     h2 {
-      padding: 0 2.5em;
+      padding: 0 $padding-medium;
     }
-    header,
     footer {
       display: none;
     }
   }
   #myDashpoint,
   #myDesign {
+    background: #f5f5f5;
+
     article {
-      & > div:first-child + div {
-        width: 100%;
-      }
+      height: auto;
     }
-    header > *,
-    footer > * {
-      &::before {
-        margin-right: $padding-small;
-      }
-      &::after {
-        margin-left: $padding-small;
-      }
+    h2,
+    h3,
+    p {
+      text-align: left;
     }
-    footer > * {
-      transform: translate(0, 1.65em);
+    footer {
+      height: auto;
+      margin-bottom: $padding-medium;
+      border: 0;
 
-      & > span {
-        margin: 0.5em;
-      }
-    }
+      & > * {
+        justify-content: center;
 
-    .box {
-      min-height: $padding-medium;
-      padding: $padding-small;
+        &::before,
+        &::after {
+          border-top: 0;
+        }
+        & > a {
+          margin: 0 $padding-small !important;
+          padding: 0 $padding-medium;
+        }
+        & > span {
+          display: none;
+        }
+      }
     }
   }
   #myContact {
-    h2 {
-      font-size: 4rem;
-    }
     form {
       padding-left: 0 !important;
 
+      div,
       button {
         margin: 0 auto !important;
       }
     }
-    header > *,
-    footer > * {
-      &::before {
-        margin-right: $padding-small;
-      }
-      &::after {
-        margin-left: $padding-small;
+    input,
+    textarea {
+      min-width: 100% !important;
+    }
+    h2 {
+      font-size: 4rem;
+    }
+    footer {
+      border: 0;
+
+      & > * {
+        &::before,
+        &::after {
+          border-top: 0;
+        }
       }
     }
   }

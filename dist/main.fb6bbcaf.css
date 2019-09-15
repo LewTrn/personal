@@ -223,7 +223,7 @@ p + p {
     border-right: solid #fff 1px; }
   #myHome .bar {
     display: inline-block;
-    min-width: 5em;
+    min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px #fafdcb; }
   #myHome .content {
@@ -410,7 +410,7 @@ p + p {
   color: #00adb5; }
   #myDashpoint .bar {
     display: inline-block;
-    min-width: 5em;
+    min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px #00adb5; }
   #myDashpoint .content {
@@ -429,7 +429,7 @@ p + p {
   color: #2e557a; }
   #myDesign .bar {
     display: inline-block;
-    min-width: 5em;
+    min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px #2e557a; }
   #myDesign .content {
@@ -464,7 +464,7 @@ p + p {
     border-right: solid #fff 1px; }
   #myContact .bar {
     display: inline-block;
-    min-width: 5em;
+    min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px #fff; }
   #myContact .content {
@@ -473,7 +473,7 @@ p + p {
   #myContact article {
     display: flex;
     height: 80%;
-    padding-top: 2rem; }
+    margin-top: 2rem; }
     #myContact article > div:first-child {
       margin-right: auto; }
     #myContact article a {
@@ -585,6 +585,12 @@ p + p {
     color: #6c7b95; }
 
 /* ----------------------------------------
+    Footer Styles
+---------------------------------------- */
+#myFooter {
+  display: none; }
+
+/* ----------------------------------------
     Media Queries
 ---------------------------------------- */
 /* ----------------------------------------
@@ -592,83 +598,65 @@ p + p {
 ---------------------------------------- */
 @media only screen and (min-width: 768px) {
   html {
-    font-size: calc(1vw + 2px); } }
+    font-size: calc(0.5vmax + 10px); } }
 
 @media only screen and (max-aspect-ratio: 3 / 2) {
-  html {
-    font-size: 1.25vw; }
   #myHome article {
     width: 60%; }
   #myDashpoint article > div:first-child + div,
   #myDesign article > div:first-child + div {
-    padding-left: 0; }
+    padding-left: 0; } }
+
+@media only screen and (max-aspect-ratio: 3 / 2) and (min-height: 900px), only screen and (max-aspect-ratio: 3 / 2) and (orientation: portrait) {
   #myContact article {
-    flex-direction: column; }
+    flex-direction: column;
+    margin-top: 1rem; }
     #myContact article form {
       align-self: auto;
-      padding-top: 4rem;
-      padding-left: 6em; } }
+      padding-top: 2rem;
+      padding-left: calc(5vw + 1rem); }
+    #myContact article input,
+    #myContact article textarea {
+      min-width: 50vmax; } }
 
-@media only screen and (orientation: portrait), only screen and (max-width: 849px) and (orientation: landscape) {
+@media only screen and (max-aspect-ratio: 11 / 10), screen and (max-width: 849px) and (orientation: landscape) {
   #myHome article {
-    width: 95%; }
+    width: calc(100% - 5vw - 1rem); }
   #myDashpoint article,
   #myDesign article {
     flex-direction: column;
-    width: 100%; }
+    width: 100%;
+    height: 70vh;
+    margin-top: 0; }
     #myDashpoint article > div:first-child,
     #myDesign article > div:first-child {
-      width: 95%; }
+      width: calc(100% - 5vw - 1rem); }
     #myDashpoint article > div:first-child + div,
     #myDesign article > div:first-child + div {
-      width: 70%;
-      margin: 0 auto;
+      min-height: 0;
       padding-top: 2rem;
-      padding-left: 0; }
-  #myDashpoint img,
-  #myDesign img {
-    width: 100%;
-    margin: 0; }
+      text-align: center; }
   #myDashpoint aside,
   #myDesign aside {
     padding-top: 2rem; }
-  #myContact article {
-    flex-direction: column; }
-    #myContact article form {
-      align-self: auto;
-      padding-top: 4rem;
-      padding-left: 6em; }
-      #myContact article form input,
-      #myContact article form textarea {
-        width: 95%; } }
-
-@media only screen and (max-width: 767px) and (orientation: landscape) {
-  .back-to-top {
-    top: calc(2rem / 2) !important;
-    right: calc(2rem / 2) !important; } }
-
-/* ----------------------------------------
-    Tablet Queries
----------------------------------------- */
-@media only screen and (min-width: 768px) and (orientation: portrait) {
-  html {
-    font-size: 2vw; } }
+  #myDashpoint img,
+  #myDesign img {
+    height: 100%;
+    width: auto;
+    margin: 0; } }
 
 /* ----------------------------------------
     Mobile Queries
 ---------------------------------------- */
-@media only screen and (max-width: 849px) and (orientation: landscape), only screen and (max-width: 767px) and (orientation: portrait) {
+@media only screen and (max-width: 767px), screen and (max-width: 849px) and (orientation: landscape) {
   html {
-    font-size: 14px; }
+    font-size: 15px; }
   section {
     padding: 2rem !important; }
-    section article {
-      width: 100% !important;
-      text-align: left; }
-      section article h2,
-      section article h3,
-      section article p {
-        text-align: left; }
+  header {
+    display: none !important; }
+  #myHome article {
+    width: 100%; }
   #myHome h1,
   #myHome h2,
   #myHome p {
@@ -676,45 +664,55 @@ p + p {
   #myHome h1 {
     font-size: 6rem; }
   #myHome h2 {
-    padding: 0 2.5em; }
-  #myHome header,
+    padding: 0 2rem; }
   #myHome footer {
     display: none; }
-  #myDashpoint article > div:first-child + div,
-  #myDesign article > div:first-child + div {
-    width: 100%; }
-  #myDashpoint header > *::before,
-  #myDashpoint footer > *::before,
-  #myDesign header > *::before,
-  #myDesign footer > *::before {
-    margin-right: 1rem; }
-  #myDashpoint header > *::after,
-  #myDashpoint footer > *::after,
-  #myDesign header > *::after,
-  #myDesign footer > *::after {
-    margin-left: 1rem; }
-  #myDashpoint footer > *,
-  #myDesign footer > * {
-    transform: translate(0, 1.65em); }
-    #myDashpoint footer > * > span,
-    #myDesign footer > * > span {
-      margin: 0.5em; }
-  #myDashpoint .box,
-  #myDesign .box {
-    min-height: 2rem;
-    padding: 1rem; }
-  #myContact h2 {
-    font-size: 4rem; }
+  #myDashpoint,
+  #myDesign {
+    background: #f5f5f5; }
+    #myDashpoint article,
+    #myDesign article {
+      height: auto; }
+    #myDashpoint h2,
+    #myDashpoint h3,
+    #myDashpoint p,
+    #myDesign h2,
+    #myDesign h3,
+    #myDesign p {
+      text-align: left; }
+    #myDashpoint footer,
+    #myDesign footer {
+      height: auto;
+      margin-bottom: 2rem;
+      border: 0; }
+      #myDashpoint footer > *,
+      #myDesign footer > * {
+        justify-content: center; }
+        #myDashpoint footer > *::before, #myDashpoint footer > *::after,
+        #myDesign footer > *::before,
+        #myDesign footer > *::after {
+          border-top: 0; }
+        #myDashpoint footer > * > a,
+        #myDesign footer > * > a {
+          margin: 0 1rem !important;
+          padding: 0 2rem; }
+        #myDashpoint footer > * > span,
+        #myDesign footer > * > span {
+          display: none; }
   #myContact form {
     padding-left: 0 !important; }
+    #myContact form div,
     #myContact form button {
       margin: 0 auto !important; }
-  #myContact header > *::before,
-  #myContact footer > *::before {
-    margin-right: 1rem; }
-  #myContact header > *::after,
-  #myContact footer > *::after {
-    margin-left: 1rem; }
+  #myContact input,
+  #myContact textarea {
+    min-width: 100% !important; }
+  #myContact h2 {
+    font-size: 4rem; }
+  #myContact footer {
+    border: 0; }
+    #myContact footer > *::before, #myContact footer > *::after {
+      border-top: 0; }
   .back-to-top,
   .bar {
     display: none !important; } }

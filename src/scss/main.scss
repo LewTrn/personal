@@ -147,7 +147,7 @@ p + p {
     margin-top: $padding-medium;
 
     p {
-      color: $secondary-dark; // ### Change this to palette dark later ###
+      color: $secondary-dark;
     }
     & > div:first-child {
       width: 75%;
@@ -260,7 +260,7 @@ p + p {
   article {
     display: flex;
     height: 80%;
-    padding-top: $padding-medium;
+    margin-top: $padding-medium;
 
     & > div:first-child {
       margin-right: auto;
@@ -369,7 +369,12 @@ p + p {
     }
   }
 }
-
+/* ----------------------------------------
+    Footer Styles
+---------------------------------------- */
+#myFooter {
+  display: none;
+}
 /* ----------------------------------------
     Media Queries
 ---------------------------------------- */
