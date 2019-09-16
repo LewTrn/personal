@@ -202,7 +202,7 @@ window.addEventListener('load', function () {
   particlesJS.load('particles', 'particles.json', function () {}); // Initialising fullPage.js
 
   new fullpage('#fullpage', {
-    anchors: ['Home', 'Dashpoint', 'DesignLearningObjects', 'Contact'],
+    // anchors:['Home', 'Dashpoint', 'DesignLearningObjects', 'Contact'],
     verticalCentered: false
   }); // Mobile device detection
 
@@ -233,7 +233,15 @@ window.addEventListener('load', function () {
 
   updateResponsive(); // Enable responsive height on desktop resize
 
-  window.addEventListener("resize", updateResponsive);
+  window.addEventListener("resize", updateResponsive); // Scroll to sections
+
+  var events = document.querySelectorAll('.anchor');
+  var sectionMap = [2, 4, 1, 1, 1];
+  events.forEach(function (e, index) {
+    e.addEventListener('click', function () {
+      fullpage_api.moveTo(sectionMap[index]);
+    });
+  });
 });
 },{"./../scss/main.scss":"scss/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -263,7 +271,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64952" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62994" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

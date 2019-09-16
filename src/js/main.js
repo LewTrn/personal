@@ -4,14 +4,13 @@ import './../scss/main.scss'
 		Initialisation
 ---------------------------------------- */
 window.addEventListener('load', () => {
-	
 	// Initialising particles.js 
 	particlesJS.load('particles', 'particles.json', function() {
 	});
 
 	// Initialising fullPage.js
 	new fullpage('#fullpage', {
-		anchors:['Home', 'Dashpoint', 'DesignLearningObjects', 'Contact'],
+		// anchors:['Home', 'Dashpoint', 'DesignLearningObjects', 'Contact'],
 		verticalCentered: false
 	});
 
@@ -46,4 +45,14 @@ window.addEventListener('load', () => {
 
 	// Enable responsive height on desktop resize
 	window.addEventListener("resize", updateResponsive);
+
+	// Scroll to sections
+	const events = document.querySelectorAll('.anchor');
+	const sectionMap = [2, 4, 1, 1, 1];
+
+	events.forEach((e, index) => {
+		e.addEventListener('click', () => {
+			fullpage_api.moveTo(sectionMap[index]);
+		});
+	});
 });

@@ -182,6 +182,9 @@ p + p {
 /* ----------------------------------------
     Component Styles
 ---------------------------------------- */
+.anchor {
+  cursor: pointer; }
+
 .box {
   display: flex;
   align-items: center;
@@ -208,7 +211,7 @@ p + p {
 /* ----------------------------------------
     Home Styles
 ---------------------------------------- */
-#myHome {
+#home {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -216,26 +219,26 @@ p + p {
   background: linear-gradient(135deg, #6c7b95, #464159);
   z-index: -1;
   color: #fff; }
-  #myHome header,
-  #myHome footer {
+  #home header,
+  #home footer {
     height: 4rem;
     border-left: solid #fff 1px;
     border-right: solid #fff 1px; }
-  #myHome .bar {
+  #home .bar {
     display: inline-block;
     min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px #fafdcb; }
-  #myHome .content {
+  #home .content {
     display: flex;
     padding-top: 2rem; }
-  #myHome article {
+  #home article {
     width: 45%;
     margin-top: auto; }
-    #myHome article p {
+    #home article p {
       filter: opacity(75%);
       padding-top: 1rem; }
-  #myHome h1 {
+  #home h1 {
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     background: linear-gradient(135deg, #fafdcb 10%, #aee7e8, #248ea9);
@@ -244,57 +247,57 @@ p + p {
     font-size: 9rem;
     line-height: 0.9em;
     user-select: none; }
-  #myHome h2 {
+  #home h2 {
     margin-top: -0.25em;
     font-weight: normal;
     font-size: 1.5rem; }
-  #myHome nav {
+  #home nav {
     font-size: 1.2rem; }
-    #myHome nav a::after {
+    #home nav a::after {
       background-color: #fafdcb; }
-    #myHome nav span + span::before {
+    #home nav span + span::before {
       content: "//";
       padding: 0 1rem; }
-  #myHome header > * {
+  #home header > * {
     display: flex;
     align-items: center;
     user-select: none;
     transform: translate(0, -0.61em); }
-    #myHome header > *::before, #myHome header > *::after {
+    #home header > *::before, #home header > *::after {
       content: "";
       display: inline-block;
       border-top: solid #fff 1px; }
-    #myHome header > *::before {
+    #home header > *::before {
       width: 100%;
       margin-right: 2rem; }
-    #myHome header > *::after {
+    #home header > *::after {
       width: 4rem;
       margin-left: 2rem; }
-  #myHome footer {
+  #home footer {
     display: flex;
     justify-content: flex-end;
     flex-direction: column; }
-    #myHome footer > * {
+    #home footer > * {
       display: flex;
       align-items: center;
       user-select: none;
       transform: translate(0, 0em); }
-      #myHome footer > *::before, #myHome footer > *::after {
+      #home footer > *::before, #home footer > *::after {
         content: "";
         display: inline-block;
         border-top: solid #fff 1px; }
-      #myHome footer > *::before {
+      #home footer > *::before {
         width: 100%;
         margin-right: 2rem; }
-      #myHome footer > *::after {
+      #home footer > *::after {
         width: 100%;
         margin-left: 2rem; }
 
 /* ----------------------------------------
     Portfolio Styles
 ---------------------------------------- */
-#myDashpoint,
-#myDesign {
+#dashpoint,
+#design {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -303,151 +306,151 @@ p + p {
   z-index: -1;
   position: relative;
   justify-content: space-between; }
-  #myDashpoint header,
-  #myDashpoint footer,
-  #myDesign header,
-  #myDesign footer {
+  #dashpoint header,
+  #dashpoint footer,
+  #design header,
+  #design footer {
     height: 4rem;
     border-left: solid lightgray 1px;
     border-right: solid lightgray 1px; }
-  #myDashpoint article,
-  #myDesign article {
+  #dashpoint article,
+  #design article {
     display: flex;
     width: 110%;
     margin-top: 2rem; }
-    #myDashpoint article p,
-    #myDesign article p {
+    #dashpoint article p,
+    #design article p {
       color: #464159; }
-    #myDashpoint article > div:first-child,
-    #myDesign article > div:first-child {
+    #dashpoint article > div:first-child,
+    #design article > div:first-child {
       width: 75%; }
-    #myDashpoint article > div:first-child + div,
-    #myDesign article > div:first-child + div {
+    #dashpoint article > div:first-child + div,
+    #design article > div:first-child + div {
       align-self: center;
       padding-left: 2rem; }
-  #myDashpoint h1,
-  #myDesign h1 {
+  #dashpoint h1,
+  #design h1 {
     font-size: 1.2rem;
     text-transform: uppercase; }
-  #myDashpoint h2,
-  #myDesign h2 {
+  #dashpoint h2,
+  #design h2 {
     font-size: 2.5rem;
     font-weight: bold;
     text-transform: uppercase;
     user-select: none; }
-  #myDashpoint aside,
-  #myDesign aside {
+  #dashpoint aside,
+  #design aside {
     display: flex;
     padding-top: 4rem; }
-    #myDashpoint aside > *,
-    #myDesign aside > * {
+    #dashpoint aside > *,
+    #design aside > * {
       flex: 1 1 0;
       padding-right: 2rem;
       word-spacing: 0.2em; }
-      #myDashpoint aside > * span,
-      #myDesign aside > * span {
+      #dashpoint aside > * span,
+      #design aside > * span {
         word-spacing: normal; }
-  #myDashpoint header > *,
-  #myDesign header > * {
+  #dashpoint header > *,
+  #design header > * {
     display: flex;
     align-items: center;
     user-select: none;
     transform: translate(0, -0.61em); }
-    #myDashpoint header > *::before, #myDashpoint header > *::after,
-    #myDesign header > *::before,
-    #myDesign header > *::after {
+    #dashpoint header > *::before, #dashpoint header > *::after,
+    #design header > *::before,
+    #design header > *::after {
       content: "";
       display: inline-block;
       border-top: solid lightgray 1px; }
-    #myDashpoint header > *::before,
-    #myDesign header > *::before {
+    #dashpoint header > *::before,
+    #design header > *::before {
       width: 4rem;
       margin-right: 2rem; }
-    #myDashpoint header > *::after,
-    #myDesign header > *::after {
+    #dashpoint header > *::after,
+    #design header > *::after {
       width: 100%;
       margin-left: 2rem; }
-  #myDashpoint footer,
-  #myDesign footer {
+  #dashpoint footer,
+  #design footer {
     display: flex;
     justify-content: flex-end;
     flex-direction: column; }
-    #myDashpoint footer > *,
-    #myDesign footer > * {
+    #dashpoint footer > *,
+    #design footer > * {
       display: flex;
       align-items: center;
       user-select: none;
       transform: translate(0, 1.95em); }
-      #myDashpoint footer > *::before, #myDashpoint footer > *::after,
-      #myDesign footer > *::before,
-      #myDesign footer > *::after {
+      #dashpoint footer > *::before, #dashpoint footer > *::after,
+      #design footer > *::before,
+      #design footer > *::after {
         content: "";
         display: inline-block;
         border-top: solid lightgray 1px; }
-      #myDashpoint footer > *::before,
-      #myDesign footer > *::before {
+      #dashpoint footer > *::before,
+      #design footer > *::before {
         width: 100%;
         margin-right: 2rem; }
-      #myDashpoint footer > *::after,
-      #myDesign footer > *::after {
+      #dashpoint footer > *::after,
+      #design footer > *::after {
         width: 100%;
         margin-left: 2rem; }
-      #myDashpoint footer > * > span,
-      #myDesign footer > * > span {
+      #dashpoint footer > * > span,
+      #design footer > * > span {
         width: 10%;
         margin: 0 2rem;
         border-top: solid 1px;
         border-color: lightgrey; }
-  #myDashpoint .back-to-top,
-  #myDesign .back-to-top {
+  #dashpoint .back-to-top,
+  #design .back-to-top {
     position: absolute;
     top: calc(4rem / 2);
     right: calc(4rem / 2);
     transform: translate(0, 0);
     background: linear-gradient(135deg, #f8f8f8, #f7f7f7); }
 
-#myDashpoint {
+#dashpoint {
   color: #00adb5; }
-  #myDashpoint .bar {
+  #dashpoint .bar {
     display: inline-block;
     min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px #00adb5; }
-  #myDashpoint .content {
+  #dashpoint .content {
     display: flex;
     padding-top: 2rem; }
-  #myDashpoint img {
+  #dashpoint img {
     width: 90%;
     margin-left: 2rem; }
-  #myDashpoint .wipe::before {
+  #dashpoint .wipe::before {
     background: #00adb5; }
-  #myDashpoint .wipe:hover {
+  #dashpoint .wipe:hover {
     color: #fff;
     border: solid 1px #00adb5; }
 
-#myDesign {
+#design {
   color: #2e557a; }
-  #myDesign .bar {
+  #design .bar {
     display: inline-block;
     min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px #2e557a; }
-  #myDesign .content {
+  #design .content {
     display: flex;
     padding-top: 2rem; }
-  #myDesign img {
+  #design img {
     width: 80%;
     margin-left: 4rem; }
-  #myDesign .wipe::before {
+  #design .wipe::before {
     background: #2e557a; }
-  #myDesign .wipe:hover {
+  #design .wipe:hover {
     color: #fff;
     border: solid 1px #2e557a; }
 
 /* ----------------------------------------
     Contact Styles
 ---------------------------------------- */
-#myContact {
+#contact {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -457,70 +460,70 @@ p + p {
   position: relative;
   justify-content: space-between;
   color: #fff; }
-  #myContact header,
-  #myContact footer {
+  #contact header,
+  #contact footer {
     height: 4rem;
     border-left: solid #fff 1px;
     border-right: solid #fff 1px; }
-  #myContact .bar {
+  #contact .bar {
     display: inline-block;
     min-width: 4vw;
     margin: 0.5em 1.5em 0 0;
     border-top: solid 5px #fff; }
-  #myContact .content {
+  #contact .content {
     display: flex;
     padding-top: 2rem; }
-  #myContact article {
+  #contact article {
     display: flex;
     height: 80%;
     margin-top: 2rem; }
-    #myContact article > div:first-child {
+    #contact article > div:first-child {
       margin-right: auto; }
-    #myContact article a {
+    #contact article a {
       margin-right: 1rem; }
-      #myContact article a img {
+      #contact article a img {
         height: 2.5em;
         margin-top: 1rem; }
-    #myContact article form {
+    #contact article form {
       align-self: flex-end;
       padding-left: 4rem;
       transform: translate(0, 0); }
-      #myContact article form > * {
+      #contact article form > * {
         margin-bottom: 1rem;
         padding-bottom: 0.2em;
         background: transparent;
         outline: transparent;
         font-family: "Barlow Semi Condensed", sans-serif;
         font-size: 1rem; }
-      #myContact article form input,
-      #myContact article form textarea {
+      #contact article form input,
+      #contact article form textarea {
         display: block;
         width: calc(50vw - 2 * 4rem - 2rem);
         color: #fff;
         border: none;
         border-bottom: solid #fff 1px; }
-        #myContact article form input:focus,
-        #myContact article form textarea:focus {
+        #contact article form input:focus,
+        #contact article form textarea:focus {
           color: inherit; }
-          #myContact article form input:focus::placeholder,
-          #myContact article form textarea:focus::placeholder {
+          #contact article form input:focus::placeholder,
+          #contact article form textarea:focus::placeholder {
             filter: opacity(0%); }
-        #myContact article form input::placeholder,
-        #myContact article form textarea::placeholder {
+        #contact article form input::placeholder,
+        #contact article form textarea::placeholder {
           color: inherit;
           filter: opacity(50%); }
-      #myContact article form textarea {
+      #contact article form textarea {
         margin-right: 2rem;
         resize: none; }
-      #myContact article form button {
+      #contact article form button {
         margin-right: 2rem;
         color: inherit;
         text-transform: uppercase;
         cursor: pointer; }
-  #myContact h1 {
+  #contact h1 {
     font-size: 1.2rem;
     text-transform: uppercase; }
-  #myContact h2 {
+  #contact h2 {
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     background: linear-gradient(135deg, #fff, whitesmoke);
@@ -529,59 +532,59 @@ p + p {
     font-size: 5rem;
     line-height: 1em;
     user-select: none; }
-  #myContact header > * {
+  #contact header > * {
     display: flex;
     align-items: center;
     user-select: none;
     transform: translate(0, -0.61em); }
-    #myContact header > *::before, #myContact header > *::after {
+    #contact header > *::before, #contact header > *::after {
       content: "";
       display: inline-block;
       border-top: solid lightgray 1px; }
-    #myContact header > *::before {
+    #contact header > *::before {
       width: 4rem;
       margin-right: 2rem; }
-    #myContact header > *::after {
+    #contact header > *::after {
       width: 100%;
       margin-left: 2rem; }
-  #myContact footer {
+  #contact footer {
     font-family: "Barlow Semi Condensed", sans-serif;
     text-transform: uppercase;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
     font-size: 1.2rem; }
-    #myContact footer > * {
+    #contact footer > * {
       display: flex;
       align-items: center;
       user-select: none;
       transform: translate(0, 0.6em);
       white-space: nowrap;
       word-spacing: 0.2em; }
-      #myContact footer > *::before, #myContact footer > *::after {
+      #contact footer > *::before, #contact footer > *::after {
         content: "";
         display: inline-block;
         border-top: solid lightgray 1px; }
-      #myContact footer > *::before {
+      #contact footer > *::before {
         width: 100%;
         margin-right: 2rem; }
-      #myContact footer > *::after {
+      #contact footer > *::after {
         width: 100%;
         margin-left: 2rem; }
-      #myContact footer > * span {
+      #contact footer > * span {
         word-spacing: normal; }
-  #myContact .back-to-top {
+  #contact .back-to-top {
     position: absolute;
     top: calc(4rem / 2);
     right: calc(4rem / 2);
     transform: translate(0, 0);
     background: linear-gradient(135deg, #4a4d64, #484d60); }
-  #myContact .wipe::before {
+  #contact .wipe::before {
     background: #fff; }
-  #myContact .wipe:hover {
+  #contact .wipe:hover {
     color: #6c7b95;
     border: solid 1px #fff; }
-  #myContact .wipe:hover::before {
+  #contact .wipe:hover::before {
     color: #6c7b95; }
 
 /* ----------------------------------------
@@ -601,46 +604,46 @@ p + p {
     font-size: calc(0.5vmax + 10px); } }
 
 @media only screen and (max-aspect-ratio: 3 / 2) {
-  #myHome article {
+  #home article {
     width: 60%; }
-  #myDashpoint article > div:first-child + div,
-  #myDesign article > div:first-child + div {
+  #dashpoint article > div:first-child + div,
+  #design article > div:first-child + div {
     padding-left: 0; } }
 
 @media only screen and (max-aspect-ratio: 3 / 2) and (min-height: 900px), only screen and (max-aspect-ratio: 3 / 2) and (orientation: portrait) {
-  #myContact article {
+  #contact article {
     flex-direction: column;
     margin-top: 1rem; }
-    #myContact article form {
+    #contact article form {
       align-self: auto;
       padding-top: 2rem;
       padding-left: calc(5vw + 1rem); }
-    #myContact article input,
-    #myContact article textarea {
+    #contact article input,
+    #contact article textarea {
       min-width: 50vmax; } }
 
 @media only screen and (max-aspect-ratio: 11 / 10), screen and (max-width: 849px) and (orientation: landscape) {
-  #myHome article {
+  #home article {
     width: calc(100% - 5vw - 1rem); }
-  #myDashpoint article,
-  #myDesign article {
+  #dashpoint article,
+  #design article {
     flex-direction: column;
     width: 100%;
     height: 70vh;
     margin-top: 0; }
-    #myDashpoint article > div:first-child,
-    #myDesign article > div:first-child {
+    #dashpoint article > div:first-child,
+    #design article > div:first-child {
       width: calc(100% - 5vw - 1rem); }
-    #myDashpoint article > div:first-child + div,
-    #myDesign article > div:first-child + div {
+    #dashpoint article > div:first-child + div,
+    #design article > div:first-child + div {
       min-height: 0;
       padding-top: 2rem;
       text-align: center; }
-  #myDashpoint aside,
-  #myDesign aside {
+  #dashpoint aside,
+  #design aside {
     padding-top: 2rem; }
-  #myDashpoint img,
-  #myDesign img {
+  #dashpoint img,
+  #design img {
     height: 100%;
     width: auto;
     margin: 0; } }
@@ -655,63 +658,63 @@ p + p {
     padding: 2rem !important; }
   header {
     display: none !important; }
-  #myHome article {
+  #home article {
     width: 100%; }
-  #myHome h1,
-  #myHome h2,
-  #myHome p {
+  #home h1,
+  #home h2,
+  #home p {
     text-align: center; }
-  #myHome h1 {
+  #home h1 {
     font-size: 6rem; }
-  #myHome h2 {
+  #home h2 {
     padding: 0 2rem; }
-  #myHome footer {
+  #home footer {
     display: none; }
-  #myDashpoint,
-  #myDesign {
+  #dashpoint,
+  #design {
     background: #f5f5f5; }
-    #myDashpoint article,
-    #myDesign article {
+    #dashpoint article,
+    #design article {
       height: auto; }
-    #myDashpoint h2,
-    #myDashpoint h3,
-    #myDashpoint p,
-    #myDesign h2,
-    #myDesign h3,
-    #myDesign p {
+    #dashpoint h2,
+    #dashpoint h3,
+    #dashpoint p,
+    #design h2,
+    #design h3,
+    #design p {
       text-align: left; }
-    #myDashpoint footer,
-    #myDesign footer {
+    #dashpoint footer,
+    #design footer {
       height: auto;
       margin-bottom: 2rem;
       border: 0; }
-      #myDashpoint footer > *,
-      #myDesign footer > * {
+      #dashpoint footer > *,
+      #design footer > * {
         justify-content: center; }
-        #myDashpoint footer > *::before, #myDashpoint footer > *::after,
-        #myDesign footer > *::before,
-        #myDesign footer > *::after {
+        #dashpoint footer > *::before, #dashpoint footer > *::after,
+        #design footer > *::before,
+        #design footer > *::after {
           border-top: 0; }
-        #myDashpoint footer > * > a,
-        #myDesign footer > * > a {
+        #dashpoint footer > * > a,
+        #design footer > * > a {
           margin: 0 1rem !important;
           padding: 0 2rem; }
-        #myDashpoint footer > * > span,
-        #myDesign footer > * > span {
+        #dashpoint footer > * > span,
+        #design footer > * > span {
           display: none; }
-  #myContact form {
+  #contact form {
     padding-left: 0 !important; }
-    #myContact form div,
-    #myContact form button {
+    #contact form div,
+    #contact form button {
       margin: 0 auto !important; }
-  #myContact input,
-  #myContact textarea {
+  #contact input,
+  #contact textarea {
     min-width: 100% !important; }
-  #myContact h2 {
+  #contact h2 {
     font-size: 4rem; }
-  #myContact footer {
+  #contact footer {
     border: 0; }
-    #myContact footer > *::before, #myContact footer > *::after {
+    #contact footer > *::before, #contact footer > *::after {
       border-top: 0; }
   .back-to-top,
   .bar {

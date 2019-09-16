@@ -51,6 +51,9 @@ p + p {
 /* ----------------------------------------
     Component Styles
 ---------------------------------------- */
+.anchor {
+  cursor: pointer;
+}
 .box {
   display: flex;
   align-items: center;
@@ -78,7 +81,7 @@ p + p {
 /* ----------------------------------------
     Home Styles
 ---------------------------------------- */
-#myHome {
+#home {
   @include container($gradient-dark, #fff);
   @include textbox($primary);
   color: #fff;
@@ -135,8 +138,8 @@ p + p {
 /* ----------------------------------------
     Portfolio Styles
 ---------------------------------------- */
-#myDashpoint,
-#myDesign {
+#dashpoint,
+#design {
   @include container($gradient-light, lightgray);
   position: relative;
   justify-content: space-between;
@@ -208,7 +211,7 @@ p + p {
     background: linear-gradient(135deg, #f8f8f8, #f7f7f7);
   }
 }
-#myDashpoint {
+#dashpoint {
   @include textbox($dash-primary);
   color: $dash-primary;
 
@@ -227,7 +230,7 @@ p + p {
     }
   }
 }
-#myDesign {
+#design {
   @include textbox($design-primary);
   color: $design-primary;
 
@@ -250,7 +253,7 @@ p + p {
 /* ----------------------------------------
     Contact Styles
 ---------------------------------------- */
-#myContact {
+#contact {
   @include container($gradient-dark, #fff);
   @include textbox(#fff);
   position: relative;
