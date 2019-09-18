@@ -1,6 +1,6 @@
 # Personal Website
 
-**My personal website for showcasing my technical skills and development projects **
+**My personal website for showcasing my technical skills and development projects**
 
 A simple single-page website explaining the development process of the various front end projects I have completed. Included are links to the live websites and repositories, as well as contact information should anyone wish to get in touch.
 
