@@ -710,7 +710,7 @@ p + p {
     #contact form div,
     #contact form button {
       margin: 0 auto !important;
-      padding: 0 1rem; }
+      padding: 0 1rem !important; }
   #contact input,
   #contact textarea {
     min-width: 100% !important; }
