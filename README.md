@@ -1,42 +1,36 @@
-# Dashpoint
+# Personal Website
 
-Dashpoint is a dynamic personal dashboard for focus and productivity.
+**My personal website for showcasing my technical skills and development projects **
 
-Inspired by the Momentum browser extension, Dashpoint provides users with a stylish, yet practical, start page for improving personal focus and workflow. The goal was to develop a lightweight, customisable dashboard focused on utility and user experience.
+A simple single-page website explaining the development process of the various front end projects I have completed. Included are links to the live websites and repositories, as well as contact information should anyone wish to get in touch.
 
-[Try out Dashpoint](https://lewtrn.github.io/dashpoint/ "lewtrn.github.io")
+[Visit my website](http://www.lewistran.com/ "lewistran.com")
+
+![Personal Website](/src/assets/screenshot.png)
 
 ## Features
 
-Dashpoint offers a range of customisable workflow tools and features including:
+Some basic features of the site include:
 
-- A personal daily focus message
-- Modular tool cards (for to-do lists, timers, calculators etc.)
-- Support for custom dashboard backgrounds via Unsplash
-- Integrated weather API for displaying local weather forecasts
-- Integrated custom bookmarks bar
+- Project descriptions, screenshots and links
+- Fully responsive – functional across all major browsers and devices
+- Modern design aesthetic, custom UI elements and CSS animations
+- Integrated contact form (served by Netlify)
 
 ## Resources
 
-#### Libraries
+#### **Libraries**
 
-- [Bulma CSS](https://bulma.io "bulma.io")
-- [SortableJS](https://github.com/SortableJS/Sortable "github.com/sortable")
-- [Animate.css](https://daneden.github.io/animate.css/ "daneden.github.io")
-- [Font Awesome Icons](https://fontawesome.com/ "fontawesome.com")
-- [Skycons](https://darkskyapp.github.io/skycons/ "darkskyapp.github.io/skycons")
+- [fullPage.js](https://alvarotrigo.com/fullPage/ "alvarotrigo.com")
+- [particles.js](https://vincentgarreau.com/particles.js/ "vincentgarreau.com")
 
-#### APIs
+#### Deployment
 
-- [Unsplash Source](https://source.unsplash.com/ "unsplash.com")
-- [Dark Sky](https://darksky.net/ "darksky.net")
+- [Netlify](https://www.netlify.com/ "netlify.com")
 
 ## Future Work
 
-Areas for future improvement may include:
+Areas for future work may include:
 
-- Improved geolocation settings for displaying weather location
-- Additional dashboard colours and themes
-- Additional tool cards and features (e.g. Pomodoro timer, alarms)
-- Option for custom daily motivational messages
-- Option to edit bookmark information
+- Project image carousel for showcasing additional screenshots and descriptions
+- On scroll element animations

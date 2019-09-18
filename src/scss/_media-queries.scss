@@ -32,7 +32,7 @@
         margin-top: $padding-small;
       }
       form {
-        align-self: auto;
+        align-self: auto !important;
         padding-top: $padding-medium;
         padding-left: calc(5vw + #{$padding-small});
       }
@@ -84,7 +84,7 @@
 // Any portrait mobile or landscape mobile below 850px (to distinguish from portrait tablets)
 @media only screen and (max-width: 767px), screen and (max-width: 849px) and (orientation: landscape) {
   html {
-    font-size: 15px;
+    font-size: 18px;
   }
   section {
     padding: $padding-medium !important;
@@ -103,7 +103,7 @@
       text-align: center;
     }
     h1 {
-      font-size: 6rem;
+      font-size: 5rem;
     }
     h2 {
       padding: 0 $padding-medium;
@@ -118,6 +118,10 @@
 
     article {
       height: auto;
+
+      & > div:first-child {
+        width: 105%;
+      }
     }
     h2,
     h3,
@@ -138,7 +142,7 @@
         }
         & > a {
           margin: 0 $padding-small !important;
-          padding: 0 $padding-medium;
+          padding: 0 $padding-small;
         }
         & > span {
           display: none;
@@ -153,6 +157,7 @@
       div,
       button {
         margin: 0 auto !important;
+        padding: 0 $padding-small;
       }
     }
     input,
@@ -160,7 +165,7 @@
       min-width: 100% !important;
     }
     h2 {
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
     footer {
       border: 0;
