@@ -85,6 +85,7 @@
 @media only screen and (max-width: 767px), screen and (max-width: 849px) and (orientation: landscape) {
   html {
     font-size: 18px;
+    overflow-x: hidden;
   }
   section {
     padding: $padding-medium !important;
@@ -157,7 +158,6 @@
       div,
       button {
         margin: 0 auto !important;
-        padding: 0 $padding-small !important;
       }
     }
     input,

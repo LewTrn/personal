@@ -653,7 +653,8 @@ p + p {
 ---------------------------------------- */
 @media only screen and (max-width: 767px), screen and (max-width: 849px) and (orientation: landscape) {
   html {
-    font-size: 18px; }
+    font-size: 18px;
+    overflow-x: hidden; }
   section {
     padding: 2rem !important; }
   header {
@@ -709,8 +710,7 @@ p + p {
     padding-left: 0 !important; }
     #contact form div,
     #contact form button {
-      margin: 0 auto !important;
-      padding: 0 1rem !important; }
+      margin: 0 auto !important; }
   #contact input,
   #contact textarea {
     min-width: 100% !important; }
