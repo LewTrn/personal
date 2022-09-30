@@ -10,6 +10,7 @@
   "author": "Lewis Tran",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.55.0"
   }
 }
