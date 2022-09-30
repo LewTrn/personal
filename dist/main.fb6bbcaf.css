@@ -166,7 +166,8 @@ html {
   margin: 0;
   padding: 0;
 }
-*:before, *:after {
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -268,7 +269,7 @@ p + p {
   padding-top: 2rem;
 }
 #home article {
-  width: 45%;
+  width: 60%;
   margin-top: auto;
 }
 #home article p {
@@ -306,7 +307,8 @@ p + p {
   user-select: none;
   transform: translate(0, -0.61em);
 }
-#home header > *::before, #home header > *::after {
+#home header > *::before,
+#home header > *::after {
   content: "";
   display: inline-block;
   border-top: solid #fff 1px;
@@ -330,7 +332,8 @@ p + p {
   user-select: none;
   transform: translate(0, 0em);
 }
-#home footer > *::before, #home footer > *::after {
+#home footer > *::before,
+#home footer > *::after {
   content: "";
   display: inline-block;
   border-top: solid #fff 1px;
@@ -419,7 +422,8 @@ p + p {
   user-select: none;
   transform: translate(0, -0.61em);
 }
-#dashpoint header > *::before, #dashpoint header > *::after,
+#dashpoint header > *::before,
+#dashpoint header > *::after,
 #design header > *::before,
 #design header > *::after {
   content: "";
@@ -449,7 +453,8 @@ p + p {
   user-select: none;
   transform: translate(0, 1.95em);
 }
-#dashpoint footer > *::before, #dashpoint footer > *::after,
+#dashpoint footer > *::before,
+#dashpoint footer > *::after,
 #design footer > *::before,
 #design footer > *::after {
   content: "";
@@ -641,7 +646,8 @@ p + p {
   user-select: none;
   transform: translate(0, -0.61em);
 }
-#contact header > *::before, #contact header > *::after {
+#contact header > *::before,
+#contact header > *::after {
   content: "";
   display: inline-block;
   border-top: solid lightgray 1px;
@@ -670,7 +676,8 @@ p + p {
   white-space: nowrap;
   word-spacing: 0.2em;
 }
-#contact footer > *::before, #contact footer > *::after {
+#contact footer > *::before,
+#contact footer > *::after {
   content: "";
   display: inline-block;
   border-top: solid lightgray 1px;
@@ -727,11 +734,12 @@ p + p {
     width: 60%;
   }
   #dashpoint article > div:first-child + div,
-#design article > div:first-child + div {
+  #design article > div:first-child + div {
     padding-left: 0;
   }
 }
-@media only screen and (max-aspect-ratio: 3/2) and (min-height: 900px), only screen and (max-aspect-ratio: 3/2) and (orientation: portrait) {
+@media only screen and (max-aspect-ratio: 3/2) and (min-height: 900px),
+  only screen and (max-aspect-ratio: 3/2) and (orientation: portrait) {
   #contact article {
     flex-direction: column;
     margin-top: 1rem;
@@ -742,37 +750,38 @@ p + p {
     padding-left: calc(5vw + 1rem);
   }
   #contact input,
-#contact textarea {
+  #contact textarea {
     min-width: 50vmax;
   }
 }
-@media only screen and (max-aspect-ratio: 11/10), screen and (max-width: 849px) and (orientation: landscape) {
+@media only screen and (max-aspect-ratio: 11/10),
+  screen and (max-width: 849px) and (orientation: landscape) {
   #home article {
     width: calc(100% - 5vw - 1rem);
   }
   #dashpoint article,
-#design article {
+  #design article {
     flex-direction: column;
     height: 70vh;
     width: 100%;
     margin-top: 0;
   }
   #dashpoint article > div:first-child,
-#design article > div:first-child {
+  #design article > div:first-child {
     width: calc(100% - 5vw - 1rem);
   }
   #dashpoint article > div:first-child + div,
-#design article > div:first-child + div {
+  #design article > div:first-child + div {
     min-height: 0;
     padding-top: 2rem;
     text-align: center;
   }
   #dashpoint aside,
-#design aside {
+  #design aside {
     padding-top: 2rem;
   }
   #dashpoint img,
-#design img {
+  #design img {
     height: 100%;
     width: auto;
     margin: 0;
@@ -781,7 +790,8 @@ p + p {
 /* ----------------------------------------
     Mobile Queries
 ---------------------------------------- */
-@media only screen and (max-width: 767px), screen and (max-width: 849px) and (orientation: landscape) {
+@media only screen and (max-width: 767px),
+  screen and (max-width: 849px) and (orientation: landscape) {
   html {
     font-size: 18px;
     overflow-x: hidden;
@@ -796,8 +806,8 @@ p + p {
     width: 100%;
   }
   #home h1,
-#home h2,
-#home p {
+  #home h2,
+  #home p {
     text-align: center;
   }
   #home h1 {
@@ -810,58 +820,59 @@ p + p {
     display: none;
   }
   #dashpoint,
-#design {
+  #design {
     background: #f5f5f5;
   }
   #dashpoint article,
-#design article {
+  #design article {
     height: auto;
   }
   #dashpoint article > div:first-child,
-#design article > div:first-child {
+  #design article > div:first-child {
     width: 105%;
   }
   #dashpoint h2,
-#dashpoint h3,
-#dashpoint p,
-#design h2,
-#design h3,
-#design p {
+  #dashpoint h3,
+  #dashpoint p,
+  #design h2,
+  #design h3,
+  #design p {
     text-align: left;
   }
   #dashpoint footer,
-#design footer {
+  #design footer {
     height: auto;
     margin-bottom: 2rem;
     border: 0;
   }
   #dashpoint footer > *,
-#design footer > * {
+  #design footer > * {
     justify-content: center;
   }
-  #dashpoint footer > *::before, #dashpoint footer > *::after,
-#design footer > *::before,
-#design footer > *::after {
+  #dashpoint footer > *::before,
+  #dashpoint footer > *::after,
+  #design footer > *::before,
+  #design footer > *::after {
     border-top: 0;
   }
   #dashpoint footer > * > a,
-#design footer > * > a {
+  #design footer > * > a {
     margin: 0 1rem !important;
     padding: 0 1rem;
   }
   #dashpoint footer > * > span,
-#design footer > * > span {
+  #design footer > * > span {
     display: none;
   }
   #contact form {
     padding-left: 0 !important;
   }
   #contact form div,
-#contact form button {
+  #contact form button {
     margin: 0 auto !important;
   }
   #contact input,
-#contact textarea {
+  #contact textarea {
     min-width: 100% !important;
   }
   #contact h2 {
@@ -870,11 +881,12 @@ p + p {
   #contact footer {
     border: 0;
   }
-  #contact footer > *::before, #contact footer > *::after {
+  #contact footer > *::before,
+  #contact footer > *::after {
     border-top: 0;
   }
   .back-to-top,
-.bar {
+  .bar {
     display: none !important;
   }
 }

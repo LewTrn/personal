@@ -25,7 +25,8 @@
   }
 
   // Rearrange contact form if height is suitable
-  @media only screen and (min-height: 900px), only screen and (orientation: portrait) {
+  @media only screen and (min-height: 900px),
+    only screen and (orientation: portrait) {
     #contact {
       article {
         flex-direction: column;
@@ -44,7 +45,8 @@
   }
 }
 // Approaching portrait orientation or landscape mobiles
-@media only screen and (max-aspect-ratio: 11/10), screen and (max-width: 849px) and (orientation: landscape) {
+@media only screen and (max-aspect-ratio: 11/10),
+  screen and (max-width: 849px) and (orientation: landscape) {
   #home {
     article {
       width: calc(100% - 5vw - #{$padding-small});
@@ -82,7 +84,8 @@
     Mobile Queries
 ---------------------------------------- */
 // Any portrait mobile or landscape mobile below 850px (to distinguish from portrait tablets)
-@media only screen and (max-width: 767px), screen and (max-width: 849px) and (orientation: landscape) {
+@media only screen and (max-width: 767px),
+  screen and (max-width: 849px) and (orientation: landscape) {
   html {
     font-size: 18px;
     overflow-x: hidden;
