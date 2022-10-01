@@ -9,9 +9,15 @@ $secondary: #6c7b95;
 $secondary-dark: #464159;
 
 $dash-primary: #00adb5;
+$dash-primary: #00adb5;
 $design-primary: #2e557a;
 
-$gradient-primary: linear-gradient(135deg, $primary 10%, $primary-tint, $primary-dark);
+$gradient-primary: linear-gradient(
+  135deg,
+  $primary 10%,
+  $primary-tint,
+  $primary-dark
+);
 $gradient-light: linear-gradient(135deg, #fff, whitesmoke);
 $gradient-dark: linear-gradient(135deg, $secondary, $secondary-dark);
 
