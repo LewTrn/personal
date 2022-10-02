@@ -87,7 +87,7 @@ p + p {
   color: #fff;
 
   article {
-    width: 55%;
+    width: 50%;
     margin-top: auto;
 
     p {
@@ -138,6 +138,7 @@ p + p {
 /* ----------------------------------------
     Portfolio Styles
 ---------------------------------------- */
+#pictionairy,
 #dashpoint,
 #design {
   @include container($gradient-light, lightgray);
@@ -209,6 +210,24 @@ p + p {
   .back-to-top {
     @include backToTop();
     background: linear-gradient(135deg, #f8f8f8, #f7f7f7);
+  }
+}
+#pictionairy {
+  @include textbox($piction-primary);
+  color: $piction-primary;
+
+  img {
+    width: 90%;
+  }
+
+  .wipe {
+    &::before {
+      background: $piction-primary;
+    }
+    &:hover {
+      color: #fff;
+      border: solid 1px $piction-primary;
+    }
   }
 }
 #dashpoint {
@@ -318,6 +337,11 @@ p + p {
         color: inherit;
         text-transform: uppercase;
         cursor: pointer;
+        transition: opacity 0.3s;
+      }
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 50%;
       }
     }
   }
@@ -359,7 +383,7 @@ p + p {
     @include backToTop();
     background: linear-gradient(135deg, #4a4d64, #484d60);
   }
-  .wipe {
+  .wipe:enabled {
     &::before {
       background: #fff;
     }

@@ -12,9 +12,10 @@
 @media only screen and (max-aspect-ratio: 3/2) {
   #home {
     article {
-      width: 60%;
+      width: 50%;
     }
   }
+  #pictionairy,
   #dashpoint,
   #design {
     article {
@@ -52,6 +53,7 @@
       width: calc(100% - 5vw - #{$padding-small});
     }
   }
+  #pictionairy,
   #dashpoint,
   #design {
     article {
@@ -116,6 +118,7 @@
       display: none;
     }
   }
+  #pictionairy,
   #dashpoint,
   #design {
     background: #f5f5f5;

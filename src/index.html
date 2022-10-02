@@ -67,21 +67,24 @@
             <div class="content">
               <div class="bar"></div>
               <div>
+                <!-- <h2>
+                  I'm a <strong>front-end engineer</strong> and I love to build
+                  things!
+                </h2> -->
                 <h2>
-                  A <strong>front-end engineer</strong> based in London who
-                  loves to build things
+                  "Ideas without action aren't ideas" -
+                  <strong>Steve Jobs</strong>
                 </h2>
                 <p>
-                  I'm an ideas kinda guy. I'm always thinking about interesting
-                  problems and coming up with ideas on how to solve them. What's
-                  the best part about being a front-end engineer? For me, it's
-                  the opportunity to bring those ideas to life. I get to work
-                  with exciting new technologies, build awesome projects and
-                  deliver amazing user experiences.
+                  The best part about being a
+                  <strong>front-end engineer</strong>? I get to bring cool ideas
+                  to life! All the while working with exciting new technologies,
+                  building awesome projects and delivering amazing user
+                  experiences along the way.
                 </p>
                 <p>
-                  And it's my pleasure to share some of those experiences with
-                  you.
+                  Allow me to share some of my own ideas that I brought to life
+                  myself. Enjoy!
                 </p>
               </div>
             </div>
@@ -312,19 +315,34 @@
           </div>
           <form name="Contact Form" method="POST" data-netlify="true">
             <input
+              id="email"
               name="Email"
               type="email"
               placeholder="Your email address"
               aria-label="Email address"
             />
             <textarea
+              id="message"
               name="Message"
               rows="5"
               placeholder="Your message"
               aria-label="Message"
             ></textarea>
             <div data-netlify-recaptcha="true"></div>
-            <button class="box wipe" type="submit">Send message</button>
+            <button id="send" class="box wipe" type="submit" disabled>
+              Send message
+            </button>
+            <script>
+              const email = document.getElementById("email");
+              const message = document.getElementById("message");
+              const send = document.getElementById("send");
+
+              const handleEvent = () =>
+                (send.disabled = !(email.value && message.value));
+
+              email.addEventListener("input", () => handleEvent());
+              message.addEventListener("input", () => handleEvent());
+            </script>
           </form>
         </article>
 
