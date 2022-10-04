@@ -12,7 +12,7 @@
 @media only screen and (max-aspect-ratio: 3/2) {
   #home {
     article {
-      width: 50%;
+      width: 55%;
     }
   }
   #pictionairy,
@@ -74,6 +74,10 @@
     aside {
       padding-top: $padding-medium;
     }
+    .video-container {
+      width: auto;
+    }
+    video,
     img {
       height: 100%;
       width: auto;

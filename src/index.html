@@ -67,12 +67,8 @@
             <div class="content">
               <div class="bar"></div>
               <div>
-                <!-- <h2>
-                  I'm a <strong>front-end engineer</strong> and I love to build
-                  things!
-                </h2> -->
                 <h2>
-                  "Ideas without action aren't ideas" -
+                  "Ideas without action aren't ideas. They're regets." -
                   <strong>Steve Jobs</strong>
                 </h2>
                 <p>
@@ -83,7 +79,7 @@
                   experiences along the way.
                 </p>
                 <p>
-                  Allow me to share some of my own ideas that I brought to life
+                  Scroll down to explore a few ideas I chose to bring to life
                   myself. Enjoy!
                 </p>
               </div>
@@ -96,6 +92,83 @@
             <div class="mouse">
               <span></span>
             </div>
+          </div>
+        </footer>
+      </section>
+
+      <!-- Pictionairy -->
+      <section id="pictionairy" class="section fp-auto-height-responsive">
+        <header>
+          <h1>Portfolio</h1>
+        </header>
+
+        <div class="back-to-top">
+          <a class="box square wipe anchor" aria-label="Back to top"
+            ><span class="arrow up"></span
+          ></a>
+        </div>
+
+        <article>
+          <div>
+            <h2>Piction-ai-ry</h2>
+            <h3>
+              A multiplayer image guessing game using AI image generation models
+            </h3>
+            <div class="content">
+              <div class="bar"></div>
+              <div>
+                <p>
+                  Piction-ai-ry was inspired by the many multiplayer drawing
+                  games that can be played online. The twist, instead of drawing
+                  an image based on a prompt, the player creates a prompt to
+                  generate images using an AI model. Anyone can create a game,
+                  share an invite link and play with up to 6 players. The player
+                  with the most points after 3 rounds wins!
+                </p>
+                <p>
+                  Built on the T3 stack (Next.js, Prisma, tRPC, Tailwind CSS),
+                  Piction-ai-ry was designed to be accessible, quick to pick up
+                  and fun to play. Supported by integrations with Vercel and
+                  Supabase, anyone, anywhere can create a game and experience
+                  Piction-ai-ry with friends. Real-time subscriptions allow
+                  players to receive live updates in game and react to events as
+                  they happen. Built with scale in mind, Piction-ai-ry can
+                  support hundreds of concurrent games with several thousands of
+                  players, all playing in real time.
+                </p>
+                <p>
+                  Currently in Beta, Piction-ai-ry will recieve a full release
+                  in late 2022.
+                </p>
+                <aside>
+                  <div>
+                    <h4>Stack</h4>
+                    <p>TypeScript - Next.js - Postgres - Tailwind CSS</p>
+                  </div>
+                  <div>
+                    <h4>Services</h4>
+                    <p>Supabase - Imagekit.io - Vercel</p>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+          <div class="video-container">
+            <video id="pictionairy-video" muted loop>
+              <source src="assets/pictionairy.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <footer>
+          <div>
+            <a
+              class="box wipe"
+              href="https://pictionairy.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              ><span>Visit Website</span></a
+            >
           </div>
         </footer>
       </section>
@@ -332,17 +405,6 @@
             <button id="send" class="box wipe" type="submit" disabled>
               Send message
             </button>
-            <script>
-              const email = document.getElementById("email");
-              const message = document.getElementById("message");
-              const send = document.getElementById("send");
-
-              const handleEvent = () =>
-                (send.disabled = !(email.value && message.value));
-
-              email.addEventListener("input", () => handleEvent());
-              message.addEventListener("input", () => handleEvent());
-            </script>
           </form>
         </article>
 
